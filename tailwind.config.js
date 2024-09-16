@@ -19,6 +19,7 @@ module.exports = {
           'colorTitle': '#2a2c39',
           'colorbluehover': '#4040C7',
           'colorbuttonhover': '#E6E6E6',
+          'colorDropDown': '#060606',
       },
     },
   },
