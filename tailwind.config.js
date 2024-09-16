@@ -6,15 +6,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.serif],
+        text: ["Roboto", ...defaultTheme.fontFamily.serif],
+        raleway: ["Raleway", ...defaultTheme.fontFamily.serif],
+        poppins: ["Poppins", ...defaultTheme.fontFamily.serif],
       },
 
       //dont remove, just for test purpose
       colors: {
-          'colormain': '#1E1E1E',
-          'colorblue': '#5152FB',
-          'colorbluedark': '#012169',
-          'colorbluelight': '#EBF3FF',
+          'colorBackground': '#2a2c39',
+          'colorOrange': '#ef6603',
+          'colorText': '#444444',
+          'colorTitle': '#2a2c39',
           'colorbluehover': '#4040C7',
           'colorbuttonhover': '#E6E6E6',
       },
