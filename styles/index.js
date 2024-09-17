@@ -5,6 +5,7 @@ const burgerBtn = document.querySelector('#burgerMenu');
 let burgerSvg = document.querySelectorAll('#burgerMenu svg');
 const navBar = document.querySelector('#navbar');
 let arrowRotation = 0;
+let prevWidth = 0;
 
 
 //Functions
@@ -24,9 +25,14 @@ const Check_Burger_Status = (e) => {
    if(e[1].style.display === 'none') {
     e[1].style.display = 'block';
     e[0].style.display = 'none';
+
+    document.querySelector('#darkBackground').setAttribute('style', 'width: 100%; height:100%; position:absolute; top:0px; left:0px; background:rgba(0,0,0,70%); z-index:50;');
+    burgerBtn.style.zIndex = '70';
    } else {
     e[1].style.display = 'none';
     e[0].style.display = 'block';
+    
+    document.querySelector('#darkBackground').removeAttribute('style');
    }
 };
 
@@ -56,11 +62,22 @@ const resize_ob = new ResizeObserver(function(entries) {
 	let width = rect.width;
 
 	console.log('Current Width : ' + width);
+    
+    prevWidth = width;
 
-    if(width <= 1199) {
-        document.querySelector('#dropdownBtn > span').addEventListener('click', () => {Check_Active_State(dropContent); rotateArrow()});
-    }
+    responsive(width);
 });
+
+const responsive = (minWidth) => {
+    console.log(`prev: ${prevWidth}`);
+    console.log(`current: ${minWidth}`);
+
+    if(minWidth <= 1199) {
+        document.querySelector('#dropdownBtn > span').addEventListener('click', () => {Check_Active_State(dropContent); rotateArrow()});
+    } else {
+        dropBtn.addEventListener('click', () => {Check_Active_State(dropContent)});
+    }
+};
 
 
 //Calling Functions
