@@ -3,21 +3,23 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <!--Fav Icon-->
         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 
+        <!--Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@400&family=Poppins:wght@400;500&display=swap"
             rel="stylesheet"
         />
+
+        <!--Css-->
         <link href="styles/output.css" rel="stylesheet" />
 
         <title>Homepage | Unlimited Coders Academy</title>
     </head>
     <body class="relative text-base text-colorText">
-        <div id="darkBackground"></div>
         <div class="fixed left-0 top-0 z-20 w-full">
             <header
                 class="static left-0 top-0 h-[77px] w-full bg-colorBackground min-[1199px]:relative"
@@ -31,7 +33,9 @@
                         >
                             <a href="index.html">Selecao</a>
                         </h1>
-
+                        <div
+                            class="absolute left-0 top-0 h-[100dvh] w-full bg-black/50"
+                        ></div>
                         <ul
                             class="invisible absolute left-1/2 top-[70px] -mx-[2.5px] flex h-[calc(100dvh-90px)] w-[calc(100%-50px)] -translate-x-1/2 flex-col rounded-[6px] bg-green-100 opacity-0 transition-all duration-[0.4s] ease-in-out min-[1199px]:visible min-[1199px]:static min-[1199px]:h-auto min-[1199px]:w-auto min-[1199px]:transform-none min-[1199px]:flex-row min-[1199px]:bg-transparent min-[1199px]:opacity-100 [&.active]:visible [&.active]:opacity-100"
                             id="navbar"
@@ -227,7 +231,7 @@
                 >
                     <!--Prev Arrow-->
                     <div class="col-span-1">
-                        <span class="inline-block size-12">
+                        <span class="inline-block size-12" id="prevBtn">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 320 512"
@@ -241,10 +245,13 @@
                     </div>
 
                     <!--Contents-->
-                    <div class="col-span-10 text-center">
+                    <div
+                        class="relative col-span-10 h-full overflow-hidden text-center"
+                    >
                         <!--Content 1-->
                         <div
-                            class="inline-block w-[670px] max-w-full text-center"
+                            class="absolute left-1/2 top-1/2 inline-block w-[670px] max-w-full -translate-x-1/2 -translate-y-1/2 text-center"
+                            id="top-carousel-content"
                         >
                             <h1
                                 class="mb-[30px] font-raleway text-5xl font-bold text-white"
@@ -278,11 +285,81 @@
                                 >
                             </div>
                         </div>
+
+                        <!--Content 2-->
+                        <div
+                            class="absolute left-1/2 top-1/2 inline-block w-[670px] max-w-full -translate-x-1/2 -translate-y-1/2 text-center"
+                            id="top-carousel-content"
+                        >
+                            <h2
+                                class="mb-[30px] font-raleway text-5xl font-bold text-white"
+                            >
+                                Lorem Ipsum Dolor
+                            </h2>
+
+                            <!--Text-->
+                            <div
+                                class="mb-10 text-center font-text text-base text-white"
+                            >
+                                <p>
+                                    Ut velit est quam dolor ad a aliquid qui
+                                    aliquid. Sequi ea ut et est quaerat sequi
+                                    nihil ut aliquam. Occaecati alias dolorem
+                                    mollitia ut. Similique ea voluptatem. Esse
+                                    doloremque accusamus repellendus deleniti
+                                    vel. Minus et tempore modi architecto.
+                                </p>
+                            </div>
+
+                            <!--Button-->
+                            <div>
+                                <a
+                                    href="#"
+                                    class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
+                                    >Read More</a
+                                >
+                            </div>
+                        </div>
+
+                        <!--Content 3-->
+                        <div
+                            class="absolute left-1/2 top-1/2 inline-block w-[670px] max-w-full -translate-x-1/2 -translate-y-1/2 text-center"
+                            id="top-carousel-content"
+                        >
+                            <h2
+                                class="mb-[30px] font-raleway text-5xl font-bold text-white"
+                            >
+                                Sequi ea ut et est quaerat
+                            </h2>
+
+                            <!--Text-->
+                            <div
+                                class="mb-10 text-center font-text text-base text-white"
+                            >
+                                <p>
+                                    Ut velit est quam dolor ad a aliquid qui
+                                    aliquid. Sequi ea ut et est quaerat sequi
+                                    nihil ut aliquam. Occaecati alias dolorem
+                                    mollitia ut. Similique ea voluptatem. Esse
+                                    doloremque accusamus repellendus deleniti
+                                    vel. Minus et tempore modi architecto.
+                                </p>
+                            </div>
+
+                            <!--Button-->
+                            <div>
+                                <a
+                                    href="#"
+                                    class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
+                                    >Read More</a
+                                >
+                            </div>
+                        </div>
                     </div>
 
                     <!--Next Arrow-->
                     <div class="col-span-1 text-end">
-                        <span class="inline-block size-12">
+                        <span class="inline-block size-12" id="nextBtn">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 320 512"
@@ -295,6 +372,9 @@
                         </span>
                     </div>
                 </div>
+            </div>
+            <div>
+                <!--Here should stay the moving Waves-->
             </div>
         </section>
         <script src="styles/index.js"></script>

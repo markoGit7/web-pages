@@ -20,5 +20,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
   }
 }

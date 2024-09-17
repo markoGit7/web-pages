@@ -1,3 +1,5 @@
+
+
 //Global Variables
 const dropBtn = document.querySelector('#dropdownBtn');
 const dropContent = document.querySelector('#dropdown-menue');
@@ -6,6 +8,13 @@ let burgerSvg = document.querySelectorAll('#burgerMenu svg');
 const navBar = document.querySelector('#navbar');
 let arrowRotation = 0;
 let prevWidth = 0;
+
+//Variables for carousels
+const topContent = document.querySelectorAll('#top-carousel-content');
+console.log(topContent);
+let nav = 0;
+let spacing = 1, times = 1;
+
 
 
 //Functions
@@ -25,16 +34,14 @@ const Check_Burger_Status = (e) => {
    if(e[1].style.display === 'none') {
     e[1].style.display = 'block';
     e[0].style.display = 'none';
-
-    document.querySelector('#darkBackground').setAttribute('style', 'width: 100%; height:100%; position:absolute; top:0px; left:0px; background:rgba(0,0,0,70%); z-index:50;');
-    burgerBtn.style.zIndex = '70';
+    
    } else {
     e[1].style.display = 'none';
     e[0].style.display = 'block';
-    
-    document.querySelector('#darkBackground').removeAttribute('style');
+
    }
 };
+
 
 //Rotating the arrow in the header when it's active
 const rotateArrow = () => {
@@ -80,9 +87,37 @@ const responsive = (minWidth) => {
 };
 
 
+
+//Carousels Functions
+const Sliding = (car, indx) => {
+    for(let i = 0; i < car.length; i++) {
+        if(indx === i) {
+            car[i].style.opacity = '100%';
+        } else {
+            car[i].style.opacity = '0%';
+        }
+    }
+};
+
+
 //Calling Functions
 
 resize_ob.observe(document.querySelector('body'));
 
 burgerSvg[1].style.display = 'none';
 burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burger_Status(burgerSvg)});
+
+//Carousels
+
+document.querySelector('#prevBtn').addEventListener('click', function() {
+    nav = nav - 1;
+    Sliding(topContent,nav);
+});
+
+document.querySelector('#nextBtn').addEventListener('click', function() {
+    nav = nav + 1;
+    Sliding(topContent,nav);
+});
+ 
+  
+ 
