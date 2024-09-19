@@ -11,12 +11,7 @@ let arrowRotation = 0;
 let prevWidth = 0;
 
 //Variables for carousels
-const topContent = document.querySelectorAll('#top-carousel-content');
-const Content_Parent = document.querySelector('#content-parent');
 
-let nav = 0, dragging = false, dragX;
-let spacing = 1, times = 1;
-let timer;
 
 
 //Functions
@@ -161,24 +156,4 @@ burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burg
 
 //Carousels
 
-Sliding(topContent, nav);
-
-Content_Parent.addEventListener('mouseover', startDragging);
-Content_Parent.addEventListener('mouseleave', stopDragging);
-
-document.querySelector('#prevBtn').addEventListener('click', function() {
-    nav = nav - 1;
-
-    outOfRange();
-    Sliding(topContent, nav);
-});
-
-document.querySelector('#nextBtn').addEventListener('click', function() {
-    nav = nav + 1;
-    
-    outOfRange();
-    Sliding(topContent, nav);
-});
-
-  
  

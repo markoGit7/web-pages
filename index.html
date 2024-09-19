@@ -230,8 +230,9 @@
                 <div
                     class="grid h-full grid-cols-12 items-center justify-center"
                 >
+                    <span class="block text-4xl text-white">NOT DONE!</span>
                     <!--Prev Arrow-->
-                    <div class="col-span-1">
+                    <!-- <div class="col-span-1">
                         <span class="inline-block size-12" id="prevBtn">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -243,16 +244,13 @@
                                 />
                             </svg>
                         </span>
-                    </div>
+                    </div> -->
 
                     <!--Contents-->
-                    <div
-                        class="relative col-span-10 h-full overflow-hidden text-center [&.dragg]:cursor-grab"
-                        id="content-parent"
-                    >
+                    <div class="absolute col-span-10 hidden" id="cards">
                         <!--Content 1-->
                         <div
-                            class="absolute left-1/2 top-1/2 inline-block w-[670px] max-w-full -translate-x-1/2 -translate-y-1/2 text-center"
+                            class="inline-block w-[670px] max-w-full text-center"
                             id="top-carousel-content"
                         >
                             <h1
@@ -290,7 +288,7 @@
 
                         <!--Content 2-->
                         <div
-                            class="absolute left-1/2 top-1/2 inline-block w-[670px] max-w-full -translate-x-1/2 -translate-y-1/2 text-center"
+                            class="inline-block w-[670px] max-w-full text-center"
                             id="top-carousel-content"
                         >
                             <h2
@@ -325,7 +323,7 @@
 
                         <!--Content 3-->
                         <div
-                            class="absolute left-1/2 top-1/2 inline-block w-[670px] max-w-full -translate-x-1/2 -translate-y-1/2 text-center"
+                            class="inline-block w-[670px] max-w-full text-center"
                             id="top-carousel-content"
                         >
                             <h2
@@ -360,7 +358,7 @@
                     </div>
 
                     <!--Next Arrow-->
-                    <div class="col-span-1 text-end">
+                    <!-- <div class="col-span-1 text-end">
                         <span class="inline-block size-12" id="nextBtn">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -372,7 +370,7 @@
                                 />
                             </svg>
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div>
@@ -382,7 +380,9 @@
 
         <!--Section About Block-->
         <section class="relative h-auto w-full py-[60px]">
-            <div class="mx-auto w-[1344px] max-w-full px-3">
+            <div
+                class="mx-auto w-[744px] max-w-full px-3 min-[992px]:w-[1344px]"
+            >
                 <div class="mb-[60px] inline-block">
                     <span
                         class="relative flex items-center font-raleway text-sm font-medium uppercase !leading-tight after:ml-[10px] after:inline-block after:h-px after:w-full after:bg-colorOrange after:content-['']"
@@ -531,6 +531,49 @@
                 </div>
             </div>
         </section>
+
+        <!--Small-Informative-Block Section-->
+        <section class="relative h-auto w-full bg-colorBackground py-[80px]">
+            <div
+                class="mx-auto w-[744px] max-w-full px-3 min-[992px]:w-[1344px]"
+            >
+                <div class="-mx-3 grid grid-cols-12 items-stretch">
+                    <div class="col-span-9 px-3">
+                        <h2
+                            class="font-raleway text-[28px] font-bold leading-tight text-white"
+                        >
+                            Call To Action
+                        </h2>
+
+                        <div
+                            class="max-w-full text-base font-normal text-white"
+                        >
+                            <p>
+                                Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-3 justify-self-center px-3">
+                        <!--Button-->
+                        <div class="mt-[10px]">
+                            <a
+                                href="#"
+                                class="inline-block min-w-[195px] rounded-[50px] bg-colorOrange px-3 py-3 text-center font-raleway text-base font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange/80"
+                                >Call To Action</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Next Section Needs Name-->
+        <section>Next Enter Name</section>
 
         <script src="styles/index.js"></script>
     </body>
