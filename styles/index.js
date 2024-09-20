@@ -1,5 +1,3 @@
-
-
 //Global Variables
 const dropBtn = document.querySelector('#dropdownBtn');
 const dropContent = document.querySelector('#dropdown-menue');
