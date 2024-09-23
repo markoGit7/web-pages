@@ -11,6 +11,10 @@ module.exports = {
         poppins: ["Poppins", ...defaultTheme.fontFamily.serif],
       },
 
+      backgroundImage: {
+        'arrow-down': "url('/images/chevron-down.svg')",
+      },
+
       //dont remove, just for test purpose
       colors: {
           'colorBackground': '#2a2c39',

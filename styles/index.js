@@ -1,3 +1,4 @@
+
 //Global Variables
 const dropBtn = document.querySelector('#dropdownBtn');
 const dropContent = document.querySelector('#dropdown-menue');
@@ -153,5 +154,9 @@ burgerSvg[1].style.display = 'none';
 burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burger_Status(burgerSvg)});
 
 //Carousels
+
+
+
+//Accordions
 
  
