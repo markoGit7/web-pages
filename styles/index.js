@@ -1,3 +1,6 @@
+//Main Variablse
+const body = document.querySelector('body');
+
 
 //Global Variables
 const dropBtn = document.querySelector('#dropdownBtn');
@@ -153,10 +156,88 @@ resize_ob.observe(document.querySelector('body'));
 burgerSvg[1].style.display = 'none';
 burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burger_Status(burgerSvg)});
 
-//Carousels
+
+//Important Message Div
+
+//Global Variables
+const firsMessage = document.querySelector('#onloadmessage');
+let messageon = false;
+localStorage.setItem('Notshown',messageon);
+let shown;
+//Functions
+
+const closeMessage = () => {
+    setTimeout(() => {
+        firsMessage.style.display = 'none';
+        body.style.overflow = 'auto';
+        messageon = true;
+        shown = localStorage.setItem('shown', messageon);
+    }, 5000);
+}
+
+const shownMessage = () => {
+    
+    let shown = localStorage.getItem('shown');
+    console.log(shown);
+    
+    if(shown === false) {
+        window.addEventListener('DOMContentLoaded', function() {
+            firsMessage.style.display = 'flex';
+            body.style.overflow = 'hidden';
+        
+            closeMessage();
+            
+        });
+    }
+    
+}
+
+//Calling Functions
+shownMessage();
+
+
+//Accordions-Block Section
+
+//Global Variables
+const accordionBtns = document.querySelectorAll('#accordionBtn');
+const accordionContent = document.querySelectorAll('#collaps-content');
+
+//Functions
+const openAccordion = (i) => {
+    
+    let height = accordionContent[i].querySelector('div').clientHeight;
+
+    if(!(accordionBtns[i].classList.contains('active'))) {
+        accordionBtns[i].classList.add('active');
+
+        accordionContent[i].style.height = `${height}px`;
+    } else {
+        accordionBtns[i].classList.remove('active');
+        accordionContent[i].style.height = '0px';
+    }
+
+    disableAccordionElement(i);
+};
+
+const disableAccordionElement = (i) => {
+    if(i === 1) {
+        accordionBtns[i].classList.remove('active');
+        accordionContent[i].style.height = '0px';
+    }
+};
+
+//Calling Functions
+
+accordionBtns[0].classList.add('active');
+accordionContent[0].style.height = `${accordionContent[0].querySelector('div').clientHeight}px`;
+
+
+accordionBtns.forEach((accordion, index) => {
+    accordion.addEventListener('click', () => {
+        openAccordion(index);
+    });
+})
 
 
 
-//Accordions
 
- 
