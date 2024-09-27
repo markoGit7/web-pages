@@ -708,6 +708,10 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-\[10px\] {
   margin-bottom: 10px;
 }
@@ -754,10 +758,6 @@ video {
 
 .mt-\[31px\] {
   margin-top: 31px;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .block {
@@ -831,6 +831,10 @@ video {
   height: 1.75rem;
 }
 
+.h-\[100dvh\] {
+  height: 100dvh;
+}
+
 .h-\[18px\] {
   height: 18px;
 }
@@ -865,10 +869,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[100dvh\] {
-  height: 100dvh;
 }
 
 .max-h-12 {
@@ -935,12 +935,12 @@ video {
   width: 670px;
 }
 
-.w-\[700px\] {
-  width: 700px;
-}
-
 .w-\[744px\] {
   width: 744px;
+}
+
+.w-\[748px\] {
+  width: 748px;
 }
 
 .w-\[calc\(100\%-25px\)\] {
@@ -961,10 +961,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[748px\] {
-  width: 748px;
 }
 
 .min-w-\[129px\] {
@@ -1119,6 +1115,10 @@ video {
   overflow: hidden;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -1202,6 +1202,10 @@ video {
   background-color: rgba(33,37,41,0.03);
 }
 
+.bg-black\/70 {
+  background-color: rgb(0 0 0 / 0.7);
+}
+
 .bg-colorBackground {
   --tw-bg-opacity: 1;
   background-color: rgb(42 44 57 / var(--tw-bg-opacity));
@@ -1254,14 +1258,6 @@ video {
 
 .bg-white\/75 {
   background-color: rgb(255 255 255 / 0.75);
-}
-
-.bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
-}
-
-.bg-black\/70 {
-  background-color: rgb(0 0 0 / 0.7);
 }
 
 .fill-colorDropDown {
@@ -1326,10 +1322,6 @@ video {
   padding: 60px 30px 60px 70px;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1338,6 +1330,11 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .px-\[2\.5px\] {
@@ -1415,11 +1412,6 @@ video {
   padding-bottom: 9;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -1470,6 +1462,11 @@ video {
 
 .font-text {
   font-family: Roboto, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-4xl {
@@ -1524,11 +1521,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-bold {
@@ -1589,6 +1581,11 @@ video {
   color: rgb(6 6 6 / var(--tw-text-opacity));
 }
 
+.text-colorError {
+  --tw-text-opacity: 1;
+  color: rgb(223 21 41 / var(--tw-text-opacity));
+}
+
 .text-colorOrange {
   --tw-text-opacity: 1;
   color: rgb(239 102 3 / var(--tw-text-opacity));
@@ -1621,11 +1618,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-colorError {
-  --tw-text-opacity: 1;
-  color: rgb(223 21 41 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -1640,10 +1632,6 @@ video {
 
 .underline-offset-4 {
   text-underline-offset: 4px;
-}
-
-.underline-offset-2 {
-  text-underline-offset: 2px;
 }
 
 .underline-offset-\[5px\] {

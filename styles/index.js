@@ -71,7 +71,6 @@ const resize_ob = new ResizeObserver(function(entries) {
 	// current width & height
 	let width = rect.width;
 
-	console.log('Current Width : ' + width);
     
     prevWidth = width;
 
@@ -79,8 +78,7 @@ const resize_ob = new ResizeObserver(function(entries) {
 });
 
 const responsive = (minWidth) => {
-    console.log(`prev: ${prevWidth}`);
-    console.log(`current: ${minWidth}`);
+   
 
     if(minWidth <= 1199) {
         document.querySelector('#dropdownBtn > span').addEventListener('click', () => {Check_Active_State(dropContent); rotateArrow()});
@@ -236,8 +234,41 @@ accordionBtns.forEach((accordion, index) => {
     accordion.addEventListener('click', () => {
         openAccordion(index);
     });
-})
+});
 
+
+//Navbar onScroll change Active class
+
+//Global Variables
+const nav = document.querySelectorAll('#navbar li a');
+const about = document.querySelector('#about'), services = document.querySelector('#services'), team = document.querySelector('#team'), contact = document.querySelector('contact');
+let increaceHeight = 0;
+
+//Functions
+const changeNavActiveClass = (e) => {
+    console.log(nav[e].getAttributeNode('href'));
+    
+    for(let i = 0; i < nav.length; i++) {
+        if(e === i) {
+            nav[e].classList.add('active');
+        } else {
+            nav[i].classList.remove('active');
+        }
+    }
+};
+
+//Calling Functions
+window.onscroll = (e) => {
+    e = window.scrollY;
+    
+    for(let i = 0; i < nav.length; i++) {
+        
+        if(e >= about.scrollHeight){
+    
+        }
+        
+    }
+}
 
 
 
