@@ -240,35 +240,31 @@ accordionBtns.forEach((accordion, index) => {
 //Navbar onScroll change Active class
 
 //Global Variables
-const nav = document.querySelectorAll('#navbar li a');
-const about = document.querySelector('#about'), services = document.querySelector('#services'), team = document.querySelector('#team'), contact = document.querySelector('contact');
-let increaceHeight = 0;
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll("#navbar > li > a");
+
 
 //Functions
-const changeNavActiveClass = (e) => {
-    console.log(nav[e].getAttributeNode('href'));
-    
-    for(let i = 0; i < nav.length; i++) {
-        if(e === i) {
-            nav[e].classList.add('active');
-        } else {
-            nav[i].classList.remove('active');
-        }
-    }
-};
 
 //Calling Functions
-window.onscroll = (e) => {
-    e = window.scrollY;
-    
-    for(let i = 0; i < nav.length; i++) {
-        
-        if(e >= about.scrollHeight){
-    
-        }
-        
-    }
-}
+window.onscroll = () => {
+    var current = "";
+    let liveScroll = window.scrollY;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      
+      if (liveScroll >= sectionTop - 200) {
+        current = section.getAttribute("id"); }
+    });
+  
+    navLi.forEach((a) => {
+      a.classList.remove("active");
+      if (a.href.includes(current)) {
+        a.classList.add("active");
+      }
+    });
+};
 
 
 

@@ -696,6 +696,11 @@ video {
   margin-right: auto;
 }
 
+.-mx-\[5px\] {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1306,6 +1311,10 @@ video {
   padding: 15px 30px 20px;
 }
 
+.p-\[160px_0_80px_0\] {
+  padding: 160px 0 80px 0;
+}
+
 .p-\[20px\] {
   padding: 20px;
 }
@@ -1410,6 +1419,11 @@ video {
 .py-\[9\] {
   padding-top: 9;
   padding-bottom: 9;
+}
+
+.px-\[5px\] {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .pb-20 {
@@ -1521,6 +1535,10 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[42px\] {
+  font-size: 42px;
 }
 
 .font-bold {
@@ -1747,6 +1765,10 @@ video {
   content: var(--tw-content);
 }
 
+.last-of-type\:pointer-events-none:last-of-type {
+  pointer-events: none;
+}
+
 .hover\:-translate-y-0:hover {
   --tw-translate-y: -0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1823,6 +1845,10 @@ video {
   opacity: 1;
 }
 
+.group:hover .group-hover\:hover\:text-colorOrange\/75:hover {
+  color: rgb(239 102 3 / 0.75);
+}
+
 .group.active .group-\[\&\.active\]\:rotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1830,6 +1856,16 @@ video {
 
 .group.active .group-\[\&\.active\]\:fill-colorOrange {
   fill: #ef6603;
+}
+
+.group .group-\[\]\:text-colorOrange {
+  --tw-text-opacity: 1;
+  color: rgb(239 102 3 / var(--tw-text-opacity));
+}
+
+.group.active .group-\[\&\.active\]\:text-colorOrange {
+  --tw-text-opacity: 1;
+  color: rgb(239 102 3 / var(--tw-text-opacity));
 }
 
 @media (min-width: 767px) {
@@ -2114,6 +2150,10 @@ video {
   fill: #fff;
 }
 
+.\[\&\:not\(\:last-of-type\)\]\:pointer-events-none:not(:last-of-type) {
+  pointer-events: none;
+}
+
 .\[\&\:not\(\:last-of-type\)\]\:m-\[10px_0_20px\]:not(:last-of-type) {
   margin: 10px 0 20px;
 }
@@ -2128,4 +2168,13 @@ video {
 
 .\[\&\:not\(\:last-of-type\)\]\:pb-4:not(:last-of-type) {
   padding-bottom: 1rem;
+}
+
+.\[\&\:not\(\:last-of-type\)\]\:text-colorOrange:not(:last-of-type) {
+  --tw-text-opacity: 1;
+  color: rgb(239 102 3 / var(--tw-text-opacity));
+}
+
+.\[\&\:not\(\:last-of-type\)\]\:hover\:text-colorOrange\/75:hover:not(:last-of-type) {
+  color: rgb(239 102 3 / 0.75);
 }
