@@ -3,8 +3,6 @@ const body = document.querySelector('body');
 
 
 //Global Variables
-const dropBtn = document.querySelector('#dropdownBtn');
-const dropContent = document.querySelector('#dropdown-menue');
 const burgerBtn = document.querySelector('#burgerMenu');
 let burgerSvg = document.querySelectorAll('#burgerMenu svg');
 const navBar = document.querySelector('#navbar');
@@ -91,56 +89,9 @@ const responsive = (minWidth) => {
         }
 
     } else {
-        dropBtn.addEventListener('click', () => {Check_Active_State(dropContent)});
-        
         //This is code for the darkBack_BurgerClick
         darkBack_BurgerClick.classList.remove('active');
     }
-};
-
-
-
-//Carousels Functions
-const Sliding = (car, indx) => {
-    for(let i = 0; i < car.length; i++) {
-        if(indx === i) {
-            car[i].style.opacity = '100%';
-            car[i].style.display = 'block';
-        } else {
-            car[i].style.opacity = '0%';
-            car[i].style.display = 'none';
-        }
-    }
-};
-
-const outOfRange = () => {
-   console.log(nav);
-
-   if(nav < 0) {
-        nav = (topContent.length - 1);
-    } else if(nav > (topContent.length - 1)) {
-        nav = 0;
-   }
-   
-};
-
-const startDragging = (e) => {
-    dragging = true;
-    dragX = e.pageX;
-    Dragging();
-};
-
-const Dragging = () => {
-    if(dragging) {
-       Content_Parent.classList.add('dragg'); 
-    } else {
-        Content_Parent.classList.remove('dragg');
-    }
-};
-
-const stopDragging = () => {
-    dragging = false;
-    Dragging();
 };
 
 
@@ -154,6 +105,38 @@ resize_ob.observe(document.querySelector('body'));
 burgerSvg[1].style.display = 'none';
 burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burger_Status(burgerSvg)});
 
+
+/*Dropdown Button JS*/
+
+//init
+const dropBtn = document.querySelector('#dropdownBtn');
+const dropContent = document.querySelector('#dropdown-menue');
+let active;
+//functions
+const hover = () => {
+
+
+    dropContent.addEventListener('mouseover', () => {
+        dropContent.classList.add('active');
+
+        if(!active) {
+            dropBtn.classList.remove('active');
+        }
+    });
+   
+};
+
+//call functions
+dropBtn.addEventListener('mouseover', () => {
+    active = true;
+    hover();
+});
+
+dropBtn.addEventListener('mouseout', () => {
+    dropContent.classList.remove('active');
+    active = false;
+    hover();
+});
 
 //Important Message Div
 
