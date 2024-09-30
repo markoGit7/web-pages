@@ -138,7 +138,9 @@ dropBtn.addEventListener('mouseout', () => {
     hover();
 });
 
-//Important Message Div
+
+
+/*Important Message JS*/
 
 //Global Variables
 const firsMessage = document.querySelector('#onloadmessage');
@@ -175,6 +177,30 @@ const shownMessage = () => {
 
 //Calling Functions
 shownMessage();
+
+
+/*Customers Slider JS*/
+
+//init
+const innerSlider = document.querySelector('#inner-slider');
+let currentSlider = 0;
+let gapX = 25;
+let slideW = document.querySelector('#inner-slider > #slide').clientWidth;
+const allSlides = document.querySelectorAll('#inner-slider > #slide');
+let indicator = `<div class="w-3 h-3 rounded-full bg-colorText/15 [&.active]:bg-colorOrange inline-block mr-1" id="indicator"></div>`;
+
+//functions
+const createIndicators = () => {
+    let i = 0;
+    while(i < allSlides.length) {
+        let indicatorsParent = document.querySelector('#indicators');
+        indicatorsParent.innerHTML = indicator;
+        i++;
+    }   
+}
+
+//call functions
+createIndicators();
 
 
 //Accordions-Block Section
