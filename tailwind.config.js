@@ -26,6 +26,7 @@ module.exports = {
           'colorDropDown': '#060606',
           'colorError': '#df1529',
           'colorSuccess': '#059652',
+          'starsColor': '#ffc107',
       },
     },
   },

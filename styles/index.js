@@ -179,28 +179,121 @@ const shownMessage = () => {
 shownMessage();
 
 
-/*Customers Slider JS*/
+/*Customers-Block Slider JS*/
 
 //init
 const innerSlider = document.querySelector('#inner-slider');
 let currentSlider = 0;
 let gapX = 25;
 let slideW = document.querySelector('#inner-slider > #slide').clientWidth;
+
 const allSlides = document.querySelectorAll('#inner-slider > #slide');
-let indicator = `<div class="w-3 h-3 rounded-full bg-colorText/15 [&.active]:bg-colorOrange inline-block mr-1" id="indicator"></div>`;
+const slider_container = document.getElementById('slider-container');
+
+let pressed = false;
+let slideX = 0;
+let scrollLeft;
 
 //functions
 const createIndicators = () => {
+    //creating indicators
     let i = 0;
     while(i < allSlides.length) {
         let indicatorsParent = document.querySelector('#indicators');
-        indicatorsParent.innerHTML = indicator;
+        let divs = document.createElement('div');
+        divs.setAttribute('class', 'w-3 h-3 rounded-full [&.active]:bg-colorOrange inline-block');
+        divs.style.background = 'rgba(68,68,68,0.15)';
+        divs.id = 'indicator';
+        indicatorsParent.appendChild(divs);
         i++;
     }   
 }
 
+
+const changeSlide = (indx) => {
+    //sliding slides
+    currentSlider = indx + 1;
+    let prevSlider = currentSlider - 1;
+
+    if(prevSlider <= 0) {
+        innerSlider.style.left = `0px`;
+
+    } else if(prevSlider >= (allSlides.length - 1)) {
+        innerSlider.style.left = `0px`;
+        
+    } else {
+        currentSlider = (prevSlider * slideW) + (gapX * prevSlider);
+        innerSlider.style.left = `-${currentSlider}px`;
+        
+    }
+    
+}
+
+
+const start = (e) => {
+    
+    pressed = true;
+    innerSlider.style.cursor = 'grab';
+    slideX = e.pageX || e.touches[0].pageX - innerSlider.offsetLeft;
+    scrollLeft = innerSlider.scrollLeft;	
+}
+
+const move = (e) => {
+    if(!pressed) return;
+
+    e.preventDefault();
+    const x = e.pageX - innerSlider.offsetLeft;
+    
+    const dist = (x - slideX);
+    
+    innerSlider.style.left = `${scrollLeft - dist}px`;
+    
+}
+
+const end = () => {
+    pressed = false;
+    innerSlider.style.cursor = 'deafult';
+}
+
 //call functions
 createIndicators();
+
+innerSlider.addEventListener('mousedown', start);
+innerSlider.addEventListener('mousemove', move);
+innerSlider.addEventListener('mouseleave', end);
+innerSlider.addEventListener('mouseup', end);
+
+const indicators = document.querySelectorAll('#indicators > #indicator').forEach((indicator, indx) => {
+    indicator.style.cursor = 'pointer';
+    
+    if(indx === 0) {
+        indicator.style.background = '#ef6603';
+    }
+
+    indicator.addEventListener('click', () => {
+ 
+       let indicators = document.querySelectorAll('#indicators > #indicator');
+        //active state on indicators
+       for (let i = 0; i < indicators.length; i++) {
+            
+            if(indx !== i) {
+                indicators[i].style.background = 'rgba(68,68,68,0.15)';
+            } else {
+                indicator.style.background = '#ef6603';
+            }
+       }
+
+       if(indx === 0) {
+            indicators[0].style.background = '#ef6603';
+       } else if(indx === (allSlides.length - 1)) {
+            indicators[0].style.background = '#ef6603';
+            indicators[indx].style.background = 'rgba(68,68,68,0.15)';
+       }
+
+       changeSlide(indx);
+        
+    });
+});
 
 
 //Accordions-Block Section
