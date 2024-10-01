@@ -17,6 +17,12 @@
         <!--Css-->
         <link href="styles/output.css" rel="stylesheet" />
 
+        <!--Bootstrap Icons Library-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+        />
+
         <!--Aos-->
         <link
             href="https://unpkg.com/aos@2.3.1/dist/aos.css"
@@ -543,15 +549,474 @@
         </section>
 
         <!--Tabs-Block-Section-->
-        <section class="relative h-auto w-full bg-colorBackground py-[80px]">
+        <section class="relative h-auto w-full py-[80px]">
             <div class="mx-auto w-[1344px] max-w-full px-3">
-                <div>
+                <!--Buttons-->
+                <div class="flex flex-row justify-between">
+                    <!--tabBtn 1-->
                     <button
-                        class="h-[103px] w-[306px] max-w-full border border-colorText/15 bg-white font-raleway text-lg !leading-tight text-colorTitle outline-none ring-0 [&.active]:bg-colorOrange [&.active]:text-white"
+                        class="group flex h-[103px] w-[306px] max-w-full flex-row items-center gap-x-[15px] border border-colorText/15 bg-white p-[15px_20px] font-raleway text-lg !leading-tight text-colorTitle outline-none ring-0 transition-all duration-300 ease-in-out hover:border-colorOrange [&.active]:bg-colorOrange [&.active]:text-white"
+                        id="tabBtn"
+                        aria-pressed="true"
                     >
-                        <span><i class="bi bi-binoculars"></i></span>
-                        <span> Modi sit est dela pireda nest </span>
+                        <span
+                            class="text-5xl !leading-tight text-colorTitle transition-all duration-300 ease-in-out group-hover:text-colorOrange group-[.active]:text-white"
+                            ><i class="bi bi-binoculars"></i
+                        ></span>
+                        <span class="text-start font-semibold">
+                            Modi sit est dela pireda nest
+                        </span>
                     </button>
+
+                    <!--tabBtn 2-->
+                    <button
+                        class="group flex h-[103px] w-[306px] max-w-full flex-row items-center gap-x-[15px] border border-colorText/15 bg-white p-[15px_20px] font-raleway text-lg !leading-tight text-colorTitle outline-none ring-0 transition-all duration-300 ease-in-out hover:border-colorOrange [&.active]:bg-colorOrange [&.active]:text-white"
+                        id="tabBtn"
+                        aria-pressed="false"
+                    >
+                        <span
+                            class="text-5xl !leading-tight text-colorTitle transition-all duration-300 ease-in-out group-hover:text-colorOrange group-[.active]:text-white"
+                            ><i class="bi bi-box-seam"></i
+                        ></span>
+                        <span class="text-start font-semibold">
+                            Unde praesenti mara setra le
+                        </span>
+                    </button>
+
+                    <!--tabBtn 3-->
+                    <button
+                        class="group flex h-[103px] w-[306px] max-w-full flex-row items-center gap-x-[15px] border border-colorText/15 bg-white p-[15px_20px] font-raleway text-lg !leading-tight text-colorTitle outline-none ring-0 transition-all duration-300 ease-in-out hover:border-colorOrange [&.active]:bg-colorOrange [&.active]:text-white"
+                        id="tabBtn"
+                        aria-pressed="false"
+                    >
+                        <span
+                            class="text-5xl !leading-tight text-colorTitle transition-all duration-300 ease-in-out group-hover:text-colorOrange group-[.active]:text-white"
+                            ><i class="bi bi-brightness-high"></i
+                        ></span>
+                        <span class="text-start font-semibold">
+                            Pariatur explica nitro dela
+                        </span>
+                    </button>
+
+                    <!--tabBtn 4-->
+                    <button
+                        class="group flex h-[103px] w-[306px] max-w-full flex-row items-center gap-x-[15px] border border-colorText/15 bg-white p-[15px_20px] font-raleway text-lg !leading-tight text-colorTitle outline-none ring-0 transition-all duration-300 ease-in-out hover:border-colorOrange [&.active]:bg-colorOrange [&.active]:text-white"
+                        id="tabBtn"
+                        aria-pressed="false"
+                    >
+                        <span
+                            class="text-5xl !leading-tight text-colorTitle transition-all duration-300 ease-in-out group-hover:text-colorOrange group-[.active]:text-white"
+                            ><i class="bi bi-command"></i
+                        ></span>
+                        <span class="text-start font-semibold">
+                            Nostrum qui dile node
+                        </span>
+                    </button>
+                </div>
+
+                <!--Tabs Content-->
+                <div
+                    class="mt-[30px] flex w-full flex-col gap-y-4"
+                    id="tab-content-container"
+                >
+                    <!--tabContent 1-->
+                    <div
+                        class="invisible w-full opacity-0 [&.active]:visible [&.active]:opacity-100"
+                        id="tabsContent"
+                    >
+                        <div class="-mx-3 flex flex-row">
+                            <!--text-->
+                            <div class="w-1/2 px-3">
+                                <h3
+                                    class="mb-2 font-raleway text-[26px] font-bold leading-tight text-colorTitle"
+                                >
+                                    Omnis fugiat ea explicabo sunt dolorum
+                                    asperiores sequi inventore rerum
+                                </h3>
+                                <div class="font-text text-base font-normal">
+                                    <p class="mb-4">
+                                        Ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor
+                                        in reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum
+                                    </p>
+
+                                    <ul>
+                                        <li class="mb-4 italic">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua.
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Duis aute irure dolor in
+                                            reprehenderit in voluptate velit.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute
+                                            irure dolor in reprehenderit in
+                                            voluptate trideta storacalaperda
+                                            mastiro dolore eu fugiat nulla
+                                            pariatur.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--image-->
+                            <div class="w-1/2 px-3">
+                                <picture>
+                                    <source
+                                        srcset="images/working-1.webp"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="images/working-1.jpg"
+                                        alt="tab-img-1"
+                                        width="800"
+                                        height="600"
+                                        loading="lazy"
+                                        class="h-full w-full object-cover object-center"
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--tabContent 2-->
+                    <div
+                        class="invisible w-full opacity-0 [&.active]:visible [&.active]:opacity-100"
+                        id="tabsContent"
+                    >
+                        <div class="-mx-3 flex flex-row">
+                            <!--text-->
+                            <div class="w-1/2 px-3">
+                                <h3
+                                    class="mb-2 font-raleway text-[26px] font-bold leading-tight text-colorTitle"
+                                >
+                                    Neque exercitationem debitis soluta quos
+                                    debitis quo mollitia officia est
+                                </h3>
+                                <div class="font-text text-base font-normal">
+                                    <p class="mb-4">
+                                        Ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor
+                                        in reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum
+                                    </p>
+
+                                    <ul>
+                                        <li class="mb-4 italic">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua.
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Duis aute irure dolor in
+                                            reprehenderit in voluptate velit.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Provident mollitia neque rerum
+                                            asperiores dolores quos qui a. Ipsum
+                                            neque dolor voluptate nisi sed.
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute
+                                            irure dolor in reprehenderit in
+                                            voluptate trideta storacalaperda
+                                            mastiro dolore eu fugiat nulla
+                                            pariatur.
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--image-->
+                            <div class="w-1/2 px-3">
+                                <picture>
+                                    <source
+                                        srcset="images/working-2.webp"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="images/working-2.jpg"
+                                        alt="tab-img-2"
+                                        width="800"
+                                        height="600"
+                                        loading="lazy"
+                                        class="h-full w-full object-cover object-center"
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--tabContent 3-->
+                    <div
+                        class="invisible w-full opacity-0 [&.active]:visible [&.active]:opacity-100"
+                        id="tabsContent"
+                    >
+                        <div class="-mx-3 flex flex-row">
+                            <!--text-->
+                            <div class="w-1/2 px-3">
+                                <h3
+                                    class="mb-2 font-raleway text-[26px] font-bold leading-tight text-colorTitle"
+                                >
+                                    Voluptatibus commodi ut accusamus ea
+                                    repudiandae ut autem dolor ut assumenda
+                                </h3>
+                                <div class="font-text text-base font-normal">
+                                    <p class="mb-4">
+                                        Ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor
+                                        in reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum
+                                    </p>
+
+                                    <ul>
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Duis aute irure dolor in
+                                            reprehenderit in voluptate velit.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Provident mollitia neque rerum
+                                            asperiores dolores quos qui a. Ipsum
+                                            neque dolor voluptate nisi sed.
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li class="mt-4 italic">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--image-->
+                            <div class="w-1/2 px-3">
+                                <picture>
+                                    <source
+                                        srcset="images/working-3.webp"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="images/working-3.jpg"
+                                        alt="tab-img-3"
+                                        width="800"
+                                        height="600"
+                                        loading="lazy"
+                                        class="h-full w-full object-cover object-center"
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--tabContent 4-->
+                    <div
+                        class="invisible w-full opacity-0 [&.active]:visible [&.active]:opacity-100"
+                        id="tabsContent"
+                    >
+                        <div class="-mx-3 flex flex-row">
+                            <!--text-->
+                            <div class="w-1/2 px-3">
+                                <h3
+                                    class="mb-2 font-raleway text-[26px] font-bold leading-tight text-colorTitle"
+                                >
+                                    Omnis fugiat ea explicabo sunt dolorum
+                                    asperiores sequi inventore rerum
+                                </h3>
+                                <div class="font-text text-base font-normal">
+                                    <p class="mb-4">
+                                        Ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor
+                                        in reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum
+                                    </p>
+
+                                    <ul>
+                                        <li class="mb-4 italic">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua.
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Duis aute irure dolor in
+                                            reprehenderit in voluptate velit.
+
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+
+                                        <li
+                                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                                        >
+                                            Ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute
+                                            irure dolor in reprehenderit in
+                                            voluptate trideta storacalaperda
+                                            mastiro dolore eu fugiat nulla
+                                            pariatur.
+                                            <span
+                                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                                            >
+                                                <i class="bi bi-check2-all"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--image-->
+                            <div class="w-1/2 px-3">
+                                <picture>
+                                    <source
+                                        srcset="images/working-4.webp"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="images/working-4.jpg"
+                                        alt="tab-img-4"
+                                        width="800"
+                                        height="600"
+                                        loading="lazy"
+                                        class="h-full w-full object-cover object-center"
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

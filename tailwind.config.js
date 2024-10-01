@@ -15,6 +15,10 @@ module.exports = {
         'arrow-down': "url('/images/chevron-down.svg')",
       },
 
+      transitionProperty: {
+        'display': 'display',
+      },
+
       //dont remove, just for test purpose
       colors: {
           'colorBackground': '#2a2c39',
