@@ -108,36 +108,6 @@ burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burg
 
 /*Dropdown Button JS*/
 
-//init
-const dropBtn = document.querySelector('#dropdownBtn');
-const dropContent = document.querySelector('#dropdown-menue');
-let active;
-//functions
-const hover = () => {
-
-
-    dropContent.addEventListener('mouseover', () => {
-        dropContent.classList.add('active');
-
-        if(!active) {
-            dropBtn.classList.remove('active');
-        }
-    });
-   
-};
-
-//call functions
-dropBtn.addEventListener('mouseover', () => {
-    active = true;
-    hover();
-});
-
-dropBtn.addEventListener('mouseout', () => {
-    dropContent.classList.remove('active');
-    active = false;
-    hover();
-});
-
 
 
 /*Important Message JS*/
@@ -212,13 +182,15 @@ const createIndicators = () => {
 
 const changeSlide = (indx) => {
     //sliding slides
+    let firstSlide = allSlides[0];
+    
     currentSlider = indx + 1;
     let prevSlider = currentSlider - 1;
 
     if(prevSlider <= 0) {
         innerSlider.style.left = `0px`;
 
-    } else if(prevSlider >= (allSlides.length - 1)) {
+    } else if(prevSlider >= (allSlides.length)) {
         innerSlider.style.left = `0px`;
         
     } else {
@@ -231,22 +203,27 @@ const changeSlide = (indx) => {
 
 
 const start = (e) => {
-    
     pressed = true;
     innerSlider.style.cursor = 'grab';
-    slideX = e.pageX || e.touches[0].pageX - innerSlider.offsetLeft;
-    scrollLeft = innerSlider.scrollLeft;	
+    slideX = e.pageX - innerSlider.offsetLeft;//numb
+    
+    scrollLeft = innerSlider.scrollLeft;//0	
 }
 
+let currentX;
 const move = (e) => {
     if(!pressed) return;
 
-    e.preventDefault();
+    
     const x = e.pageX - innerSlider.offsetLeft;
     
     const dist = (x - slideX);
+
+    innerSlider.style.left = `${dist}px`;
     
-    innerSlider.style.left = `${scrollLeft - dist}px`;
+    console.log(currentX);
+    
+
     
 }
 
