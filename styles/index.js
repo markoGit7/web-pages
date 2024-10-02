@@ -154,38 +154,159 @@ shownMessage();
 const tabBtns = document.querySelectorAll('#tabBtn');
 const tabsContent = document.querySelectorAll('#tabsContent');
 let emptyDiv = ``;
+let cloneOn = true;
 
 //functions
+
+const beginerState = () => {//Function for the deafult state of the elements
+    tabBtns[0].classList.add('active'); 
+    tabsContent[0].classList.add('active');
+
+    for(let i = 1; i < tabsContent.length; i++) {
+        tabsContent[i].style.position = 'absolute';
+        tabsContent[i].style.zIndex = '-999';
+    }
+};
+
 const changeTab = (i) => {
-
-    //when the buttons and content are !==
-
+    let elm = document.querySelectorAll('#tabsContent');
+    
+    
     tabBtns[i].classList.add('active'); 
-    tabsContent[i].classList.add('active');
-    tabsContent[i].style.position = 'static';
-    tabsContent[i].style.delay = '100ms';
 
     for(let j = 0; j < tabBtns.length; j++) {
-        
-        if(j !== i) {
-            tabBtns[j].classList.remove('active');
-            tabsContent[j].classList.remove('active');
-            tabsContent[j].style.zIndex = '-999';
-            tabsContent[j].style.position = 'absolute';
+        if(i !== j) {
+            tabBtns[j].classList.remove('active'); 
+        }
+    } 
+
+
+    elm[i].classList.add('active');
+    elm[i].style.cssText = 'position: static; z-index: 1; delay:100ms';
+
+    if(tabBtns.length !== elm.length) {
+        createClone();
+    }
+
+    stylingClone(i);    
+
+    for(let j = 0; j < elm.length; j++) {
+        if(i !== j) {
+            elm[j].classList.remove('active'); 
+            elm[j].style.cssText = 'position: absolute; z-index: -999';
         }
     }
     
-    
-
 };
 
 
+const createClone = () => {//Function for creating a clone existing content if there is more buttons then content
+    let elm = document.querySelectorAll('#tabsContent');
+    
+    let clone = elm[0].cloneNode(true);
+    clone.setAttribute('data-clone', 'clone');
+    document.querySelector('#tab-content-container').appendChild(clone);
+
+};
+
+const stylingClone = (i) => {//Function for styling clone div tab
+    let elm = document.querySelectorAll('#tabsContent');
+    let clones = document.querySelectorAll('[data-clone="clone"]')[0];
+    clones.classList.remove('active');
+    clones.style.cssText = 'position: absolute; z-index: -999';
+    let noContent = `
+
+        <div class="-mx-3 flex flex-row">
+            <!--text-->
+            <div class="w-1/2 px-3">
+                <h3
+                    class="mb-2 font-raleway text-[26px] font-bold leading-tight text-colorTitle"
+                >
+                    Empty Content
+                </h3>
+                <div class="font-text text-base font-normal">
+                    <p class="mb-4">
+                        .......................................................................................
+                    </p>
+
+                    <ul>
+                        <li class="mb-4 italic">
+                            .......................................................................................
+                        </li>
+
+                        <li
+                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                        >
+                            .......................................................................................
+
+                            <span
+                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                            >
+                                <i class="bi bi-check2-all"></i>
+                            </span>
+                        </li>
+
+                        <li
+                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                        >
+                            .......................................................................................
+
+                            <span
+                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                            >
+                                <i class="bi bi-check2-all"></i>
+                            </span>
+                        </li>
+
+                        <li
+                            class="relative pl-6 after:inline-block after:size-4 [&:not(:last-of-type)]:mb-[10px]"
+                        >
+                            .......................................................................................
+
+                            <span
+                                class="absolute left-0 top-[4px] inline-block text-[20px] text-colorOrange"
+                            >
+                                <i class="bi bi-check2-all"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--image-->
+            <div class="w-1/2 px-3 ">
+                <picture>
+                    <source
+                        srcset="images/working-1.webp"
+                        type="image/webp"
+                    />
+                    <img
+                        src="images/working-1.jpg"
+                        alt="tab-img-1"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                        class="h-full w-full object-cover object-center"
+                    />
+                </picture>
+            </div>
+        </div>
+    
+    `
+    clones.innerHTML = noContent;
+    
+    if(i === (elm.length - 1)) {
+        clones.classList.add('active');
+        clones.style.cssText = 'position: static; z-index: 1; delay:100ms';
+        
+    }
+}
 
 //call functions
+beginerState();
 
 tabBtns.forEach((btn, i) => {
     
-    btn.addEventListener('click', () =>{changeTab(i)});
+    btn.addEventListener('click', () =>{changeTab(i);});
 });
 
 /*Customers-Block Slider JS*/
