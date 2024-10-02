@@ -154,62 +154,31 @@ shownMessage();
 const tabBtns = document.querySelectorAll('#tabBtn');
 const tabsContent = document.querySelectorAll('#tabsContent');
 let emptyDiv = ``;
-tabsContent[0].classList.add('active');
-tabBtns[0].classList.add('active');
-let calc = 1, checkActive = false;
 
 //functions
 const changeTab = (i) => {
 
     //when the buttons and content are !==
-    if(tabBtns.length !== tabsContent.length) {
-        tabBtns[0].classList.add('active');
 
-        if(tabBtns.length > tabsContent.length) {
-            alert(`You have ${tabBtns.length - tabsContent.length}+ more button then content. Make Them Even.`);
-        } else {
-            alert(`You have ${tabsContent.length - tabBtns.length}+ more content then button. Make Them Even.`);
-        }
-        return;
-    }
-    
-    
-
-    tabBtns[i].classList.add('active');
+    tabBtns[i].classList.add('active'); 
     tabsContent[i].classList.add('active');
+    tabsContent[i].style.position = 'static';
+    tabsContent[i].style.delay = '100ms';
 
     for(let j = 0; j < tabBtns.length; j++) {
         
         if(j !== i) {
             tabBtns[j].classList.remove('active');
             tabsContent[j].classList.remove('active');
+            tabsContent[j].style.zIndex = '-999';
+            tabsContent[j].style.position = 'absolute';
         }
-        
-    }
-
-    if(calc >= tabsContent.length) {
-        calc = tabsContent.length;
-        
-        if(calc > i) {
-            checkActive = true;
-        }
-
-    } else {
-        let contentH = tabsContent[i].clientHeight;
-        // calc = (calc * contentH) + (calc * 16);
-
-        if(checkActive) {
-            calc = i;
-        }
-
-        console.log(calc);
-        calc++;
-        
     }
     
     
 
 };
+
 
 
 //call functions
