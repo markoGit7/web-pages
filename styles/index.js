@@ -169,26 +169,27 @@ const beginerState = () => {//Function for the deafult state of the elements
 };
 
 const changeTab = (i) => {
+    
     let elm = document.querySelectorAll('#tabsContent');
+
+    if(tabBtns.length !== elm.length) {
+        createClone();
+        stylingClone(i);
+    }
+
     
     
     tabBtns[i].classList.add('active'); 
+    
+    elm[i].classList.add('active');
+    elm[i].classList.add('active');
+    elm[i].style.cssText = 'position: static; z-index: 1; delay:100ms';
 
     for(let j = 0; j < tabBtns.length; j++) {
         if(i !== j) {
             tabBtns[j].classList.remove('active'); 
         }
-    } 
-
-
-    elm[i].classList.add('active');
-    elm[i].style.cssText = 'position: static; z-index: 1; delay:100ms';
-
-    if(tabBtns.length !== elm.length) {
-        createClone();
-    }
-
-    stylingClone(i);    
+    }  
 
     for(let j = 0; j < elm.length; j++) {
         if(i !== j) {
@@ -211,6 +212,11 @@ const createClone = () => {//Function for creating a clone existing content if t
 
 const stylingClone = (i) => {//Function for styling clone div tab
     let elm = document.querySelectorAll('#tabsContent');
+    tabBtns[0].classList.remove('active');
+    
+    elm[0].classList.remove('active'); 
+    elm[0].style.cssText = 'position: absolute; z-index: -999';
+
     let clones = document.querySelectorAll('[data-clone="clone"]')[0];
     clones.classList.remove('active');
     clones.style.cssText = 'position: absolute; z-index: -999';
@@ -273,21 +279,13 @@ const stylingClone = (i) => {//Function for styling clone div tab
                 </div>
             </div>
             <!--image-->
-            <div class="w-1/2 px-3 ">
-                <picture>
-                    <source
-                        srcset="images/working-1.webp"
-                        type="image/webp"
-                    />
-                    <img
-                        src="images/working-1.jpg"
-                        alt="tab-img-1"
-                        width="800"
-                        height="600"
-                        loading="lazy"
-                        class="h-full w-full object-cover object-center"
-                    />
-                </picture>
+            <div class="w-1/2 px-3" style="height:486px;">
+                <span class="flex items-center justify-center w-full h-full" style="background-color:rgba(42, 44, 57, 0.4)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" class="bi bi-card-image fill-white" viewBox="0 0 16 16">
+                        <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                        <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54L1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                </span>
             </div>
         </div>
     
@@ -315,16 +313,22 @@ tabBtns.forEach((btn, i) => {
 const innerSlider = document.querySelector('#inner-slider');
 let currentSlider = 0;
 let gapX = 25;
-let slideW = document.querySelector('#inner-slider > #slide').clientWidth;
+
 
 const allSlides = document.querySelectorAll('#inner-slider > #slide');
-const slider_container = document.getElementById('slider-container');
+let sliderContainer = document.querySelector('#customer-slider-container').clientWidth;
 
 let pressed = false;
 let slideX = 0;
 let scrollLeft;
 
 //functions
+const slidesWidth = () => {//Function for setting Slides Width
+    allSlides.forEach((slide) => {
+        slide.style.width = `${sliderContainer / 3}px`;
+    });
+};
+
 const createIndicators = () => {
     //creating indicators
     let i = 0;
@@ -341,6 +345,10 @@ const createIndicators = () => {
 
 
 const changeSlide = (indx) => {
+    let slideW = allSlides[indx].clientWidth;
+    
+    
+    
     //sliding slides
     let firstSlide = allSlides[0];
     
@@ -393,6 +401,7 @@ const end = () => {
 }
 
 //call functions
+slidesWidth();
 createIndicators();
 
 innerSlider.addEventListener('mousedown', start);
@@ -421,10 +430,9 @@ const indicators = document.querySelectorAll('#indicators > #indicator').forEach
        }
 
        if(indx === 0) {
-            indicators[0].style.background = '#ef6603';
+            indicators[indx].style.background = '#ef6603';
        } else if(indx === (allSlides.length - 1)) {
-            indicators[0].style.background = '#ef6603';
-            indicators[indx].style.background = 'rgba(68,68,68,0.15)';
+            indicators[indx].style.background = '#ef6603';
        }
 
        changeSlide(indx);
