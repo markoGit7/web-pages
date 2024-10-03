@@ -507,3 +507,15 @@ window.onscroll = () => {
 
 
 
+/* Testing Carousel's indicators spawn*/
+//init
+const option = {
+    totalSlides: 11, 
+    shownSlides: 3, 
+};
+
+console.log(Math.round(option.totalSlides / option.shownSlides));
+
+//functions
+
+//call functions
