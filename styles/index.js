@@ -310,135 +310,36 @@ tabBtns.forEach((btn, i) => {
 /*Customers-Block Slider JS*/
 
 //init
-const innerSlider = document.querySelector('#inner-slider');
-let currentSlider = 0;
-let gapX = 25;
-
-
-const allSlides = document.querySelectorAll('#inner-slider > #slide');
-let sliderContainer = document.querySelector('#customer-slider-container').clientWidth;
-
-let pressed = false;
-let slideX = 0;
-let scrollLeft;
+const innerContainer = document.getElementById('inner-slider'),
+slide = document.querySelectorAll('#slide');
 
 //functions
-const slidesWidth = () => {//Function for setting Slides Width
-    allSlides.forEach((slide) => {
-        slide.style.width = `${sliderContainer / 3}px`;
-    });
-};
-
-const createIndicators = () => {
-    //creating indicators
+const createIndicators = () => {//Function for creating indicators
     let i = 0;
-    while(i < allSlides.length) {
-        let indicatorsParent = document.querySelector('#indicators');
-        let divs = document.createElement('div');
-        divs.setAttribute('class', 'w-3 h-3 rounded-full [&.active]:bg-colorOrange inline-block');
-        divs.style.background = 'rgba(68,68,68,0.15)';
-        divs.id = 'indicator';
-        indicatorsParent.appendChild(divs);
+    while(i < slide.length) {
+        let indicator = document.createElement('div');
+        indicator.className = 'w-3 h-3 bg-colorText [&:not(:last-of-type)]:mr-1 rounded-full';
+        indicator.style.cssText = 'background: rgba(68, 68, 68, 0.15); cursor: pointer'
+        indicator.id = 'indicator';
+        document.getElementById('indicators').appendChild(indicator);
         i++;
-    }   
-}
-
-
-const changeSlide = (indx) => {
-    let slideW = allSlides[indx].clientWidth;
-    
-    
-    
-    //sliding slides
-    let firstSlide = allSlides[0];
-    
-    currentSlider = indx + 1;
-    let prevSlider = currentSlider - 1;
-
-    if(prevSlider <= 0) {
-        innerSlider.style.left = `0px`;
-
-    } else if(prevSlider >= (allSlides.length)) {
-        innerSlider.style.left = `0px`;
-        
-    } else {
-        currentSlider = (prevSlider * slideW) + (gapX * prevSlider);
-        innerSlider.style.left = `-${currentSlider}px`;
-        
     }
-    
 }
 
-
-const start = (e) => {
-    pressed = true;
-    innerSlider.style.cursor = 'grab';
-    slideX = e.pageX - innerSlider.offsetLeft;//numb
+const slidesMove = (i) => {//Function for making the slides move
     
-    scrollLeft = innerSlider.scrollLeft;//0	
-}
-
-let currentX;
-const move = (e) => {
-    if(!pressed) return;
-
     
-    const x = e.pageX - innerSlider.offsetLeft;
-    
-    const dist = (x - slideX);
-
-    innerSlider.style.left = `${dist}px`;
-    
-    console.log(currentX);
-    
-
-    
-}
-
-const end = () => {
-    pressed = false;
-    innerSlider.style.cursor = 'deafult';
 }
 
 //call functions
-slidesWidth();
 createIndicators();
+const allindicators = document.querySelectorAll('#indicator');
 
-innerSlider.addEventListener('mousedown', start);
-innerSlider.addEventListener('mousemove', move);
-innerSlider.addEventListener('mouseleave', end);
-innerSlider.addEventListener('mouseup', end);
-
-const indicators = document.querySelectorAll('#indicators > #indicator').forEach((indicator, indx) => {
-    indicator.style.cursor = 'pointer';
-    
-    if(indx === 0) {
-        indicator.style.background = '#ef6603';
-    }
-
-    indicator.addEventListener('click', () => {
- 
-       let indicators = document.querySelectorAll('#indicators > #indicator');
-        //active state on indicators
-       for (let i = 0; i < indicators.length; i++) {
-            
-            if(indx !== i) {
-                indicators[i].style.background = 'rgba(68,68,68,0.15)';
-            } else {
-                indicator.style.background = '#ef6603';
-            }
-       }
-
-       if(indx === 0) {
-            indicators[indx].style.background = '#ef6603';
-       } else if(indx === (allSlides.length - 1)) {
-            indicators[indx].style.background = '#ef6603';
-       }
-
-       changeSlide(indx);
-        
-    });
+allindicators.forEach((indicator, i) => {
+    indicator.addEventListener('click', ()=>{slidesMove(i)});
 });
+
+
 
 
 //Accordions-Block Section
