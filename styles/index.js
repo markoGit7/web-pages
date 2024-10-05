@@ -310,6 +310,7 @@ tabBtns.forEach((btn, i) => {
 /*Customers-Block Slider JS*/
 
 //init
+const mainContainer = document.querySelector('#customer-slider-container');
 const innerContainer = document.getElementById('inner-slider'),
 slide = document.querySelectorAll('#slide');
 
@@ -327,6 +328,9 @@ const createIndicators = () => {//Function for creating indicators
 }
 
 const slidesMove = (i) => {//Function for making the slides move
+    let offset_Left = slide[i].offsetLeft;
+      
+    innerContainer.style.left = `-${offset_Left}px`;
     
     
 }
@@ -338,7 +342,6 @@ const allindicators = document.querySelectorAll('#indicator');
 allindicators.forEach((indicator, i) => {
     indicator.addEventListener('click', ()=>{slidesMove(i)});
 });
-
 
 
 
