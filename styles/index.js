@@ -331,6 +331,9 @@ const slidesMove = (i) => {//Function for making the slides move
     let offset_Left = slide[i].offsetLeft;
       
     innerContainer.style.left = `-${offset_Left}px`;
+
+    console.log(innerContainer.offsetLeft);
+    
     
     
 }
