@@ -33,6 +33,19 @@
         <title>Blog</title>
     </head>
     <body class="relative text-base text-colorText">
+        <!--Scroll to top arrow-->
+        <div
+            class="fixed bottom-0 right-[15px] -z-10 rounded-full opacity-0 transition-all duration-300 ease-in-out [&.visibleOn]:bottom-[15px] [&.visibleOn]:z-[999] [&.visibleOn]:opacity-100"
+            id="scrollTop"
+        >
+            <a
+                href="#"
+                class="inline-flex size-11 items-center justify-center rounded-full bg-colorOrange text-white transition-all duration-300 ease-in-out hover:bg-colorOrange/80"
+            >
+                <i class="bi bi-arrow-up-short myIcon [&.myIcon]:text-2xl"></i>
+            </a>
+        </div>
+
         <div class="fixed left-0 top-0 z-20 w-full">
             <header
                 class="static left-0 top-0 h-[77px] w-full bg-colorBackground min-[1199px]:relative"
@@ -56,7 +69,7 @@
                         >
                             <li class="px-[2.5px]">
                                 <a
-                                    href="#home"
+                                    href="index.html"
                                     class="flex min-h-[37px] items-center justify-start rounded-[50px] px-[20px] py-2 font-poppins text-[17px] font-medium text-colorDropDown transition-all duration-300 ease-in-out hover:bg-transparent hover:text-colorOrange min-[1199px]:justify-center min-[1199px]:text-sm min-[1199px]:font-normal min-[1199px]:text-white min-[1199px]:hover:bg-colorOrange min-[1199px]:hover:text-white [&.active]:text-colorOrange min-[1199px]:[&.active]:bg-colorOrange min-[1199px]:[&.active]:text-white"
                                     >Home</a
                                 >
@@ -64,7 +77,7 @@
 
                             <li class="px-[2.5px]">
                                 <a
-                                    href="#about"
+                                    href="index.html#about"
                                     class="flex min-h-[37px] items-center justify-start rounded-[50px] px-[20px] py-2 font-poppins text-[17px] font-medium text-colorDropDown transition-all duration-300 ease-in-out hover:bg-transparent hover:text-colorOrange min-[1199px]:justify-center min-[1199px]:text-sm min-[1199px]:font-normal min-[1199px]:text-white min-[1199px]:hover:bg-colorOrange min-[1199px]:hover:text-white [&.active]:text-colorOrange min-[1199px]:[&.active]:bg-colorOrange min-[1199px]:[&.active]:text-white"
                                     >About</a
                                 >
@@ -72,7 +85,7 @@
 
                             <li class="px-[2.5px]">
                                 <a
-                                    href="#services"
+                                    href="index.html#services"
                                     class="flex min-h-[37px] items-center justify-start rounded-[50px] px-[20px] py-2 font-poppins text-[17px] font-medium text-colorDropDown transition-all duration-300 ease-in-out hover:bg-transparent hover:text-colorOrange min-[1199px]:justify-center min-[1199px]:text-sm min-[1199px]:font-normal min-[1199px]:text-white min-[1199px]:hover:bg-colorOrange min-[1199px]:hover:text-white [&.active]:text-colorOrange min-[1199px]:[&.active]:bg-colorOrange min-[1199px]:[&.active]:text-white"
                                     >Services</a
                                 >
@@ -88,7 +101,7 @@
 
                             <li class="px-[2.5px]">
                                 <a
-                                    href="#team"
+                                    href="index.html#team"
                                     class="flex min-h-[37px] items-center justify-start rounded-[50px] px-[20px] py-2 font-poppins text-[17px] font-medium text-colorDropDown transition-all duration-300 ease-in-out hover:bg-transparent hover:text-colorOrange min-[1199px]:justify-center min-[1199px]:text-sm min-[1199px]:font-normal min-[1199px]:text-white min-[1199px]:hover:bg-colorOrange min-[1199px]:hover:text-white [&.active]:text-colorOrange min-[1199px]:[&.active]:bg-colorOrange min-[1199px]:[&.active]:text-white"
                                     >Team</a
                                 >
@@ -96,7 +109,7 @@
 
                             <li class="px-[2.5px]">
                                 <a
-                                    href="#"
+                                    href="blog.html"
                                     class="flex min-h-[37px] items-center justify-start rounded-[50px] px-[20px] py-2 font-poppins text-[17px] font-medium text-colorDropDown transition-all duration-300 ease-in-out hover:bg-transparent hover:text-colorOrange min-[1199px]:justify-center min-[1199px]:text-sm min-[1199px]:font-normal min-[1199px]:text-white min-[1199px]:hover:bg-colorOrange min-[1199px]:hover:text-white [&.active]:text-colorOrange min-[1199px]:[&.active]:bg-colorOrange min-[1199px]:[&.active]:text-white"
                                     >Blog</a
                                 >
@@ -200,7 +213,7 @@
 
                             <li class="px-[2.5px]">
                                 <a
-                                    href="#contact"
+                                    href="index.html#contact"
                                     class="flex min-h-[37px] items-center justify-start rounded-[50px] px-[20px] py-2 font-poppins text-[17px] font-medium text-colorDropDown transition-all duration-300 ease-in-out hover:bg-transparent hover:text-colorOrange min-[1199px]:justify-center min-[1199px]:text-sm min-[1199px]:font-normal min-[1199px]:text-white min-[1199px]:hover:bg-colorOrange min-[1199px]:hover:text-white [&.active]:text-colorOrange min-[1199px]:[&.active]:bg-colorOrange min-[1199px]:[&.active]:text-white"
                                     >Contact</a
                                 >
@@ -283,7 +296,7 @@
                             class="mx-auto mb-[30px] h-auto w-[832px] max-w-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.1)]"
                         >
                             <!--Image-->
-                            <div class="h-[624px]">
+                            <div class="h-auto min-[767px]:h-[624px]">
                                 <picture>
                                     <source
                                         srcset="images/blog/blog-1.webp"
@@ -295,7 +308,7 @@
                                         width="1024"
                                         height="768"
                                         loading="lazy"
-                                        class="h-full w-full object-cover object-center"
+                                        class="h-auto w-full object-cover object-center min-[767px]:h-full"
                                     />
                                 </picture>
                             </div>
@@ -303,7 +316,7 @@
                             <!--Content-->
                             <div class="relative w-full p-[30px]">
                                 <h2
-                                    class="mb-[30px] font-raleway text-[28px] font-bold leading-tight text-colorTitle"
+                                    class="mb-[30px] font-raleway text-[25px] font-bold !leading-tight text-colorTitle min-[450px]:text-[28px]"
                                 >
                                     Dolorum optio tempore voluptas dignissimos
                                     cumque fuga qui quibusdam quia
@@ -357,7 +370,7 @@
 
                                 <!--Text-->
                                 <div
-                                    class="font-text text-base font-normal text-colorText"
+                                    class="font-text text-sm font-normal text-colorText min-[450px]:text-base"
                                 >
                                     <p class="[&:not(:last-of-type)]:mb-4">
                                         Similique neque nam consequuntur ad non
@@ -380,7 +393,7 @@
                                     </p>
 
                                     <div
-                                        class="relative mb-5 bg-colorText/5 p-[60px] text-center text-[22px] font-medium italic !leading-[160%] before:absolute before:left-0 before:top-1/2 before:h-[150px] before:w-[3px] before:-translate-y-1/2 before:bg-colorOrange before:content-['']"
+                                        class="relative mb-5 bg-colorText/5 p-[40px] text-center text-xl font-medium italic !leading-[160%] before:absolute before:left-0 before:top-1/2 before:h-[150px] before:w-[3px] before:-translate-y-1/2 before:bg-colorOrange before:content-[''] min-[450px]:p-[60px] min-[450px]:text-[22px]"
                                     >
                                         Et vero doloremque tempore voluptatem
                                         ratione vel aut. Deleniti sunt animi
@@ -437,7 +450,9 @@
                                     </p>
 
                                     <!--image-->
-                                    <div class="h-[579px] w-full">
+                                    <div
+                                        class="h-auto w-full min-[767px]:h-[579px]"
+                                    >
                                         <picture>
                                             <source
                                                 srcset="
@@ -451,7 +466,7 @@
                                                 width="1024"
                                                 height="768"
                                                 loading="lazy"
-                                                class="h-full w-full object-cover object-center"
+                                                class="h-auto w-full object-cover object-center min-[767px]:h-full"
                                             />
                                         </picture>
                                     </div>
@@ -555,10 +570,12 @@
                             </div>
                         </div>
 
-                        <div class="mx-auto h-auto w-[832px] max-w-full">
+                        <div
+                            class="mx-auto h-auto w-[832px] max-w-full pb-[10px]"
+                        >
                             <!--Comments-->
                             <span
-                                class="mb-2 block font-raleway text-2xl font-bold text-colorTitle"
+                                class="mb-2 block font-raleway text-xl font-bold text-colorTitle min-[450px]:text-2xl"
                                 id="comments-length"
                                 >8 Comments</span
                             >
@@ -610,7 +627,7 @@
 
                                     <!--comment-text-->
                                     <div
-                                        class="font-text text-base font-normal text-colorText"
+                                        class="font-text text-sm font-normal text-colorText min-[450px]:text-base"
                                     >
                                         <p>
                                             Et rerum totam nisi. Molestiae vel
@@ -671,7 +688,7 @@
 
                                     <!--comment-text-->
                                     <div
-                                        class="font-text text-base font-normal text-colorText"
+                                        class="font-text text-sm font-normal text-colorText min-[450px]:text-base"
                                     >
                                         <p>
                                             Ipsam tempora sequi voluptatem quis
@@ -734,7 +751,7 @@
 
                                         <!--comment-text-->
                                         <div
-                                            class="font-text text-base font-normal text-colorText"
+                                            class="font-text text-sm font-normal text-colorText min-[450px]:text-base"
                                         >
                                             <p>
                                                 Enim ipsa eum fugiat fuga
@@ -817,7 +834,7 @@
 
                                             <!--comment-text-->
                                             <div
-                                                class="font-text text-base font-normal text-colorText"
+                                                class="font-text text-sm font-normal text-colorText min-[450px]:text-base"
                                             >
                                                 <p>
                                                     Et dignissimos impedit nulla
@@ -884,7 +901,7 @@
 
                                     <!--comment-text-->
                                     <div
-                                        class="font-text text-base font-normal text-colorText"
+                                        class="font-text text-sm font-normal text-colorText min-[450px]:text-base"
                                     >
                                         <p>
                                             Distinctio nesciunt rerum
@@ -952,7 +969,7 @@
 
                                     <!--comment-text-->
                                     <div
-                                        class="font-text text-base font-normal text-colorText"
+                                        class="font-text text-sm font-normal text-colorText min-[450px]:text-base"
                                     >
                                         <p>
                                             Dolorem atque aut. Omnis doloremque
@@ -964,6 +981,549 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <!--Form-->
+                        <div
+                            class="mx-auto mt-[30px] w-[832px] max-w-full bg-white p-[30px] shadow-[0_4px_16px_rgba(0,0,0,0.1)]"
+                        >
+                            <h4
+                                class="mb-2 font-raleway text-[22px] font-bold leading-tight text-colorTitle"
+                            >
+                                Post Comment
+                            </h4>
+                            <p
+                                class="mb-4 font-text text-sm font-normal text-colorText"
+                            >
+                                Your email address will not be published.
+                                Required fields are marked *
+                            </p>
+                            <form action="#" class="mb-0">
+                                <div
+                                    class="-mx-3 flex flex-row flex-wrap gap-y-6"
+                                >
+                                    <!--Name-->
+                                    <div class="w-full px-3 min-[767px]:w-1/2">
+                                        <label for="FirstName" class="hidden"
+                                            >Your Name</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="FirstName"
+                                            placeholder="Your Name*"
+                                            class="w-full border border-colorText/20 p-[10.5px_15px] font-text text-sm font-normal text-colorText outline-none ring-0 transition-all duration-300 ease-in-out focus:border-colorOrange"
+                                        />
+                                    </div>
+
+                                    <!--Email-->
+                                    <div class="w-full px-3 min-[767px]:w-1/2">
+                                        <label for="Email" class="hidden"
+                                            >Your Email</label
+                                        >
+                                        <input
+                                            type="email"
+                                            id="Email"
+                                            placeholder="Your Email*"
+                                            class="w-full border border-colorText/20 p-[10.5px_15px] font-text text-sm font-normal text-colorText outline-none ring-0 transition-all duration-300 ease-in-out focus:border-colorOrange"
+                                        />
+                                    </div>
+
+                                    <!--Subject-->
+                                    <div class="w-full px-3">
+                                        <label for="subject" class="hidden"
+                                            >Your Website</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="subject"
+                                            placeholder="Your Website"
+                                            class="w-full border border-colorText/20 p-[10.5px_15px] font-text text-sm font-normal text-colorText outline-none ring-0 transition-all duration-300 ease-in-out focus:border-colorOrange"
+                                        />
+                                    </div>
+
+                                    <!--Textarea-->
+                                    <div class="w-full px-3">
+                                        <textarea
+                                            placeholder="Your Comment*"
+                                            id="comment"
+                                            name="comment"
+                                            class="min-h-[120px] w-full border border-colorText/20 p-[10.5px_15px] font-text text-sm font-normal text-colorText outline-none ring-0 transition-colors duration-300 ease-in-out focus:border-colorOrange"
+                                        ></textarea>
+                                    </div>
+
+                                    <!--Success-->
+                                    <div
+                                        class="hidden w-full px-3"
+                                        id="successMessage"
+                                    >
+                                        <div
+                                            class="bg-colorSuccess p-[15px] font-text text-base font-semibold text-white"
+                                        >
+                                            Your message has been sent. Thank
+                                            you!
+                                        </div>
+                                    </div>
+
+                                    <!--Button-->
+                                    <div class="w-full text-center">
+                                        <button
+                                            type="submit"
+                                            class="inline-block min-w-[147px] rounded-[4px] bg-colorOrange px-3 py-[10px] text-center font-text text-base font-medium text-white outline-none ring-0 transition-all duration-300 ease-in-out hover:bg-colorOrange/80"
+                                        >
+                                            Post Comment
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div
+                        class="col-span-12 mt-20 px-3 min-[450px]:mt-[120px] min-[992px]:col-span-4 min-[992px]:mt-0"
+                    >
+                        <!--Author-->
+                        <div
+                            class="w-full rounded-[5px] border border-colorText/10 bg-colorText/[2%] p-[30px] text-center [&:not(:last-of-type)]:mb-[30px]"
+                        >
+                            <div
+                                class="mb-[15px] inline-block size-[130px] max-w-full overflow-hidden rounded-full min-[450px]:size-[160px]"
+                            >
+                                <picture>
+                                    <source
+                                        srcset="images/blog/blog-author.webp"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="images/blog/blog-author.jpg"
+                                        alt="blog-author"
+                                        width="600"
+                                        height="600"
+                                        loading="lazy"
+                                        class="h-full w-full rounded-full object-cover object-center"
+                                    />
+                                </picture>
+                            </div>
+
+                            <!--Name-->
+                            <h3
+                                class="mb-[5px] font-raleway text-xl font-semibold text-colorText/80 min-[450px]:text-2xl"
+                            >
+                                Jane Smith
+                            </h3>
+
+                            <!--Social Media-->
+                            <div class="mb-[30px] w-full">
+                                <div
+                                    class="-mx-1 flex flex-row flex-wrap justify-center"
+                                >
+                                    <!--media 1-->
+                                    <div class="px-1">
+                                        <a
+                                            href="#"
+                                            class="inline-flex h-[18px] w-[18px] max-w-full items-center justify-center"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                class="inline-block h-auto max-h-[18px] w-auto max-w-[18px] shrink-0 fill-colorText/40 transition-all duration-300 ease-in-out hover:fill-colorOrange"
+                                            >
+                                                <path
+                                                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    <!--media 2-->
+                                    <div class="px-1">
+                                        <a
+                                            href="#"
+                                            class="inline-flex h-[18px] w-[18px] max-w-full items-center justify-center"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"
+                                                class="inline-block h-auto max-h-[18px] w-auto max-w-[18px] shrink-0 fill-colorText/40 transition-all duration-300 ease-in-out hover:fill-colorOrange"
+                                            >
+                                                <path
+                                                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    <!--media 3-->
+                                    <div class="px-1">
+                                        <a
+                                            href="#"
+                                            class="inline-flex h-[18px] w-[18px] max-w-full items-center justify-center"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512"
+                                                class="inline-block h-auto max-h-[18px] w-auto max-w-[18px] shrink-0 fill-colorText/40 transition-all duration-300 ease-in-out hover:fill-colorOrange"
+                                            >
+                                                <path
+                                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    <!--media 4-->
+                                    <div class="px-1">
+                                        <a
+                                            href="#"
+                                            class="inline-flex h-[18px] w-[18px] max-w-full items-center justify-center"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 448 512"
+                                                class="inline-block h-auto max-h-[18px] w-auto max-w-[18px] shrink-0 fill-colorText/40 transition-all duration-300 ease-in-out hover:fill-colorOrange"
+                                            >
+                                                <path
+                                                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--text-->
+                            <div
+                                class="text-start font-text text-sm italic text-colorText/70 min-[450px]:text-base"
+                            >
+                                <p>
+                                    Itaque quidem optio quia voluptatibus
+                                    dolorem dolor. Modi eum sed possimus
+                                    accusantium. Quas repellat voluptatem
+                                    officia numquam sint aspernatur voluptas.
+                                    Esse et accusantium ut unde voluptas.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!--Search-->
+                        <div
+                            class="w-full rounded-[5px] border border-colorText/10 bg-colorText/[2%] p-[30px] [&:not(:last-of-type)]:mb-[30px]"
+                        >
+                            <!--title-->
+                            <div
+                                class="relative mb-5 pl-[14px] font-raleway text-xl font-semibold !leading-tight text-colorTitle before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-colorOrange before:content-['']"
+                            >
+                                Search
+                            </div>
+
+                            <!--input-->
+                            <div>
+                                <form action="#" class="mb-0">
+                                    <div class="relative w-full">
+                                        <label for="search" class="hidden"
+                                            >Search</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="w-full rounded-[50px] border border-colorText/25 bg-white px-5 py-2 pr-10 text-colorText outline-none ring-0 transition-all duration-300 ease-in-out focus:border-colorOrange"
+                                        />
+
+                                        <!--icon-->
+                                        <span
+                                            class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer transition-all duration-300 ease-in-out hover:text-colorOrange"
+                                        >
+                                            <i class="bi bi-search"></i>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!--Categories-->
+                        <div
+                            class="w-full rounded-[5px] border border-colorText/10 bg-colorText/[2%] p-[30px] [&:not(:last-of-type)]:mb-[30px]"
+                        >
+                            <!--title-->
+                            <div
+                                class="relative mb-5 pl-[14px] font-raleway text-xl font-semibold !leading-tight text-colorTitle before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-colorOrange before:content-['']"
+                            >
+                                Categories
+                            </div>
+
+                            <ul>
+                                <li class="[&:not(:last-of-type)]:mb-[10px]">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base text-colorText/80 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >General</a
+                                    >
+                                    <span
+                                        class="pl-[5px] font-text text-base text-colorText/50"
+                                        >(25)</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-[10px]">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base text-colorText/80 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Lifestyle</a
+                                    >
+                                    <span
+                                        class="pl-[5px] font-text text-base text-colorText/50"
+                                        >(12)</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-[10px]">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base text-colorText/80 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Travel</a
+                                    >
+                                    <span
+                                        class="pl-[5px] font-text text-base text-colorText/50"
+                                        >(5)</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-[10px]">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base text-colorText/80 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Design</a
+                                    >
+                                    <span
+                                        class="pl-[5px] font-text text-base text-colorText/50"
+                                        >(22)</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-[10px]">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base text-colorText/80 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Creative</a
+                                    >
+                                    <span
+                                        class="pl-[5px] font-text text-base text-colorText/50"
+                                        >(8)</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-[10px]">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base text-colorText/80 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Educaion</a
+                                    >
+                                    <span
+                                        class="pl-[5px] font-text text-base text-colorText/50"
+                                        >(14)</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--Recent Posts-->
+                        <div
+                            class="w-full rounded-[5px] border border-colorText/10 bg-colorText/[2%] p-[30px] [&:not(:last-of-type)]:mb-[30px]"
+                        >
+                            <!--title-->
+                            <div
+                                class="relative mb-5 pl-[14px] font-raleway text-xl font-semibold !leading-tight text-colorTitle before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-colorOrange before:content-['']"
+                            >
+                                Recent Posts
+                            </div>
+
+                            <ul>
+                                <li class="[&:not(:last-of-type)]:mb-5">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base font-normal !leading-normal text-colorText transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Nihil blanditiis at in nihil autem</a
+                                    >
+                                    <span
+                                        class="block font-text text-sm italic text-colorText/50"
+                                        >Jan 1, 2020</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-5">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base font-normal !leading-normal text-colorText transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Quidem autem et impedit</a
+                                    >
+                                    <span
+                                        class="block font-text text-sm italic text-colorText/50"
+                                        >Jan 1, 2020</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-5">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base font-normal !leading-normal text-colorText transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Id quia et et ut maxime similique
+                                        occaecati ut</a
+                                    >
+                                    <span
+                                        class="block font-text text-sm italic text-colorText/50"
+                                        >Jan 1, 2020</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-5">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base font-normal !leading-normal text-colorText transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Laborum corporis quo dara net para</a
+                                    >
+                                    <span
+                                        class="block font-text text-sm italic text-colorText/50"
+                                        >Jan 1, 2020</span
+                                    >
+                                </li>
+
+                                <li class="[&:not(:last-of-type)]:mb-5">
+                                    <a
+                                        href="#"
+                                        class="font-text text-base font-normal !leading-normal text-colorText transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        >Et dolores corrupti quae illo quod
+                                        dolor</a
+                                    >
+                                    <span
+                                        class="block font-text text-sm italic text-colorText/50"
+                                        >Jan 1, 2020</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--Tags-->
+                        <div
+                            class="w-full rounded-[5px] border border-colorText/10 bg-colorText/[2%] p-[30px] [&:not(:last-of-type)]:mb-[30px]"
+                        >
+                            <!--title-->
+                            <div
+                                class="relative mb-5 pl-[14px] font-raleway text-xl font-semibold !leading-tight text-colorTitle before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-colorOrange before:content-['']"
+                            >
+                                Tags
+                            </div>
+
+                            <ul
+                                class="flex w-full max-w-full flex-wrap min-[992px]:w-[354px]"
+                            >
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >App</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >IT</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Business</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Mac</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Design</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Office</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Creative</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Studio</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Smart</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Tips</a
+                                    >
+                                </li>
+
+                                <li
+                                    class="[&:not(:last-of-type)]:mb-2 [&:not(:last-of-type)]:mr-[6px]"
+                                >
+                                    <a
+                                        href="#"
+                                        class="inline-flex rounded-[50px] bg-colorText/[6%] p-[5px_15px] font-text text-sm font-normal !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:bg-colorOrange hover:text-white"
+                                        >Marketing</a
+                                    >
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,23 @@
 const body = document.querySelector('body');
 
 
+/*Header on Scroll BG & Appearance of Scroll to top element*/
+
+window.addEventListener('scroll', (e) => {
+    e = window.scrollY;
+    const header = document.querySelector('header'),
+    scrollTop = document.querySelector('#scrollTop');
+
+    if(e > 150) {
+        header.style.cssText = `background: rgba(42,44,57,0.9);`;
+        scrollTop.classList.add('visibleOn');
+    } else {
+        header.style.removeProperty('background');
+        scrollTop.classList.remove('visibleOn');
+    }
+    
+});
+
 //Global Variables
 const burgerBtn = document.querySelector('#burgerMenu');
 let burgerSvg = document.querySelectorAll('#burgerMenu svg');
@@ -403,12 +420,12 @@ const navLi = document.querySelectorAll("#navbar > li > a");
 //Calling Functions
 window.onscroll = () => {
     var current = "";
-    let liveScroll = window.scrollY;
+    let liveScroll = window.scrollY;//100
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       
-      if (liveScroll >= sectionTop - 200) {
+      if (liveScroll >= sectionTop - 300) {
         current = section.getAttribute("id"); }
     });
   
