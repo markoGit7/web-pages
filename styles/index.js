@@ -123,7 +123,46 @@ burgerSvg[1].style.display = 'none';
 burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burger_Status(burgerSvg)});
 
 
-/*Dropdown Button JS*/
+/*Top Carousel JS*/
+
+//init
+let current = 0;
+//functions
+
+const prev = () => {//function for the previouse arrow
+    if(current <= 0) return;
+    current--;
+    contentChange();
+};
+
+const next = () => {//function for the next arrow
+    current++;
+    contentChange();
+};
+
+const contentChange = () => {//function for changing the slides
+    const content = document.querySelectorAll('#top-carousel-content');
+
+    if(current > (content.length - 1)) current = 0;
+
+    console.log(current);
+    content.forEach((e, i) => {
+
+        if(current !== i) {
+            e.classList.add('-order-[200]');     
+        } else {
+            e.classList.remove('-order-[200]');
+            e.classList.add('order-0');
+        }
+    });
+
+
+
+};
+
+//call functions
+contentChange();
+
 
 
 /*Important Message JS*/

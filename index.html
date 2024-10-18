@@ -262,10 +262,9 @@
                 <div
                     class="grid h-full grid-cols-12 items-center justify-center"
                 >
-                    <span class="block text-4xl text-white">NOT DONE!</span>
                     <!--Prev Arrow-->
-                    <!-- <div class="col-span-1">
-                        <span class="inline-block size-12" id="prevBtn">
+                    <div class="col-span-1">
+                        <span class="inline-block size-12" onclick="prev()">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 320 512"
@@ -276,122 +275,131 @@
                                 />
                             </svg>
                         </span>
-                    </div> -->
+                    </div>
 
                     <!--Contents-->
-                    <div class="absolute col-span-10 hidden" id="cards">
+                    <div class="col-span-10 flex" id="cards">
                         <!--Content 1-->
                         <div
-                            class="inline-block w-[670px] max-w-full text-center"
+                            class="w-full max-w-full shrink-0 text-center"
                             id="top-carousel-content"
                         >
-                            <h1
-                                class="mb-[30px] font-raleway text-5xl font-bold text-white"
-                            >
-                                Welcome to
-                                <span class="underline underline-offset-4"
-                                    >Selecao</span
+                            <div class="inline-block w-[778px] max-w-full">
+                                <h1
+                                    class="animate mb-[30px] font-raleway text-5xl font-bold text-white"
                                 >
-                            </h1>
+                                    Welcome to
+                                    <span class="underline underline-offset-4"
+                                        >Selecao</span
+                                    >
+                                </h1>
 
-                            <!--Text-->
-                            <div
-                                class="mb-10 text-center font-text text-base text-white"
-                            >
-                                <p>
-                                    Ut velit est quam dolor ad a aliquid qui
-                                    aliquid. Sequi ea ut et est quaerat sequi
-                                    nihil ut aliquam. Occaecati alias dolorem
-                                    mollitia ut. Similique ea voluptatem. Esse
-                                    doloremque accusamus repellendus deleniti
-                                    vel. Minus et tempore modi architecto.
-                                </p>
-                            </div>
-
-                            <!--Button-->
-                            <div>
-                                <a
-                                    href="#"
-                                    class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
-                                    >Read More</a
+                                <!--Text-->
+                                <div
+                                    class="animate paragraph mb-10 text-center font-text text-base text-white"
                                 >
+                                    <p>
+                                        Ut velit est quam dolor ad a aliquid qui
+                                        aliquid. Sequi ea ut et est quaerat
+                                        sequi nihil ut aliquam. Occaecati alias
+                                        dolorem mollitia ut. Similique ea
+                                        voluptatem. Esse doloremque accusamus
+                                        repellendus deleniti vel. Minus et
+                                        tempore modi architecto.
+                                    </p>
+                                </div>
+
+                                <!--Button-->
+                                <div class="animate button">
+                                    <a
+                                        href="#"
+                                        class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
+                                        >Read More</a
+                                    >
+                                </div>
                             </div>
                         </div>
 
                         <!--Content 2-->
                         <div
-                            class="inline-block w-[670px] max-w-full text-center"
+                            class="w-full max-w-full shrink-0 text-center"
                             id="top-carousel-content"
                         >
-                            <h2
-                                class="mb-[30px] font-raleway text-5xl font-bold text-white"
-                            >
-                                Lorem Ipsum Dolor
-                            </h2>
-
-                            <!--Text-->
-                            <div
-                                class="mb-10 text-center font-text text-base text-white"
-                            >
-                                <p>
-                                    Ut velit est quam dolor ad a aliquid qui
-                                    aliquid. Sequi ea ut et est quaerat sequi
-                                    nihil ut aliquam. Occaecati alias dolorem
-                                    mollitia ut. Similique ea voluptatem. Esse
-                                    doloremque accusamus repellendus deleniti
-                                    vel. Minus et tempore modi architecto.
-                                </p>
-                            </div>
-
-                            <!--Button-->
-                            <div>
-                                <a
-                                    href="#"
-                                    class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
-                                    >Read More</a
+                            <div class="inline-block w-[778px] max-w-full">
+                                <h2
+                                    class="mb-[30px] font-raleway text-5xl font-bold text-white"
                                 >
+                                    Lorem Ipsum Dolor
+                                </h2>
+
+                                <!--Text-->
+                                <div
+                                    class="mb-10 text-center font-text text-base text-white"
+                                >
+                                    <p>
+                                        Ut velit est quam dolor ad a aliquid qui
+                                        aliquid. Sequi ea ut et est quaerat
+                                        sequi nihil ut aliquam. Occaecati alias
+                                        dolorem mollitia ut. Similique ea
+                                        voluptatem. Esse doloremque accusamus
+                                        repellendus deleniti vel. Minus et
+                                        tempore modi architecto.
+                                    </p>
+                                </div>
+
+                                <!--Button-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
+                                        >Read More</a
+                                    >
+                                </div>
                             </div>
                         </div>
 
                         <!--Content 3-->
                         <div
-                            class="inline-block w-[670px] max-w-full text-center"
+                            class="w-full max-w-full shrink-0 text-center"
                             id="top-carousel-content"
                         >
-                            <h2
-                                class="mb-[30px] font-raleway text-5xl font-bold text-white"
-                            >
-                                Sequi ea ut et est quaerat
-                            </h2>
-
-                            <!--Text-->
-                            <div
-                                class="mb-10 text-center font-text text-base text-white"
-                            >
-                                <p>
-                                    Ut velit est quam dolor ad a aliquid qui
-                                    aliquid. Sequi ea ut et est quaerat sequi
-                                    nihil ut aliquam. Occaecati alias dolorem
-                                    mollitia ut. Similique ea voluptatem. Esse
-                                    doloremque accusamus repellendus deleniti
-                                    vel. Minus et tempore modi architecto.
-                                </p>
-                            </div>
-
-                            <!--Button-->
-                            <div>
-                                <a
-                                    href="#"
-                                    class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
-                                    >Read More</a
+                            <div class="inline-block w-[778px] max-w-full">
+                                <h2
+                                    class="animate mb-[30px] font-raleway text-5xl font-bold text-white"
                                 >
+                                    Sequi ea ut et est quaerat
+                                </h2>
+
+                                <!--Text-->
+                                <div
+                                    class="animate mb-10 text-center font-text text-base text-white"
+                                >
+                                    <p>
+                                        Ut velit est quam dolor ad a aliquid qui
+                                        aliquid. Sequi ea ut et est quaerat
+                                        sequi nihil ut aliquam. Occaecati alias
+                                        dolorem mollitia ut. Similique ea
+                                        voluptatem. Esse doloremque accusamus
+                                        repellendus deleniti vel. Minus et
+                                        tempore modi architecto.
+                                    </p>
+                                </div>
+
+                                <!--Button-->
+                                <div class="animate">
+                                    <a
+                                        href="#"
+                                        class="inline-block min-w-[145px] rounded-[50px] border-[2px] border-colorOrange px-3 py-[9] text-center font-text text-sm font-medium text-white transition-all duration-300 ease-in-out hover:bg-colorOrange"
+                                        >Read More</a
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--Next Arrow-->
-                    <!-- <div class="col-span-1 text-end">
-                        <span class="inline-block size-12" id="nextBtn">
+                    <div class="col-span-1 text-end">
+                        <span class="inline-block size-12" onclick="next()">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 320 512"
@@ -402,7 +410,7 @@
                                 />
                             </svg>
                         </span>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <div>
