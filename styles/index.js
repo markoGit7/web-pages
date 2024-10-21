@@ -166,6 +166,7 @@ const autoPlay = () => {//function for auto playing the content
 
     } else {
         autocurrent = current;
+        clearTimeout(timer);
     }
 
     contentChange();
