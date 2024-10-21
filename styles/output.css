@@ -1786,16 +1786,16 @@ video {
   padding-top: 10px;
 }
 
+.pt-\[120px\] {
+  padding-top: 120px;
+}
+
 .pt-\[25px\] {
   padding-top: 25px;
 }
 
 .pt-\[77px\] {
   padding-top: 77px;
-}
-
-.pt-\[120px\] {
-  padding-top: 120px;
 }
 
 .text-center {
@@ -2105,6 +2105,10 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+#dropdownBtn:hover + #dropdown-menue {
+  opacity: 100%;
+}
+
 .list.active:hover span {
   color:#ef6603;
 }
@@ -2135,7 +2139,7 @@ video {
       url("../images/wawe2.png"),
       url("../images/wawe3.png");
   background-repeat: repeat-x;
-  background-size: 1600px 50%;
+  background-size: 1900px 50%;
   background-position: 0 130%, -50px 130%, 500px 130%;
   animation: 20s waves linear infinite forwards;
 }
