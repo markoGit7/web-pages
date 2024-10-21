@@ -127,41 +127,72 @@ burgerBtn.addEventListener('click', () =>{Check_Active_State(navBar); Check_Burg
 
 //init
 let current = 0;
+let autocurrent = 0;
+let playing;
+let timer;
+const homebody = document.querySelector('#home');
 //functions
 
 const prev = () => {//function for the previouse arrow
     if(current <= 0) return;
+    
     current--;
+    autoPlay();
     contentChange();
 };
 
 const next = () => {//function for the next arrow
     current++;
+
+    autoPlay();
     contentChange();
 };
 
-const contentChange = () => {//function for changing the slides
+const autoPlay = () => {//function for auto playing the content
+    console.log(`Status: ${playing}`);
     const content = document.querySelectorAll('#top-carousel-content');
 
+    if(playing) {
+        
+        if(autocurrent > (content.length - 1)) autocurrent = 0;
+
+        console.log(autocurrent);
+        current = autocurrent;
+        autocurrent++;
+
+        timer = setTimeout(() => {
+            autoPlay();
+        }, 5000);
+
+    } else {
+        autocurrent = current;
+    }
+
+    contentChange();
+}
+
+const contentChange = () => {//function for changing the slides
+    const content = document.querySelectorAll('#top-carousel-content');
+    console.log(`current: ${current}`);
     if(current > (content.length - 1)) current = 0;
 
-    console.log(current);
-    content.forEach((e, i) => {
-
+    
+    content[current].style.cssText = `order:0;`;
+    
+    for(let i = 0; i < content.length; i++) {
         if(current !== i) {
-            e.classList.add('-order-[200]');     
-        } else {
-            e.classList.remove('-order-[200]');
-            e.classList.add('order-0');
+            content[i].style.cssText = `order:200`;
         }
-    });
+    }
 
-
+    console.log(current);
 
 };
 
 //call functions
 contentChange();
+homebody.addEventListener('mouseleave', () => {playing = true; autoPlay();});
+homebody.addEventListener('mouseover', () => {playing = false; autoPlay();});
 
 
 
