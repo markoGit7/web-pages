@@ -402,11 +402,31 @@ tabBtns.forEach((btn, i) => {
 
 //functions
 $(document).ready(function(){
-    $('#inner-slider').slick({
-    slidesToShow: 3,
-    dots:true,
-    centerMode: true,
+    $('#my-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        speed: 300,
+        infinite: true,
+        autoplaySpeed: 5000,
+        autoplay: true,
+        dots: true,
+        
+
+        responsive: [
+            {
+            breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
     });
+
+    $('.slick-dots li button').text('');//this removes the numbers from the dots
+
+    $('.slick-track').css('display', 'flex');//this makes the slides items-stretch
 });
 
 

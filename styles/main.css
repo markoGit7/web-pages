@@ -45,3 +45,39 @@
         background-position: 1600px 130%, 3150px 130%, 5300px 130%;
     }
 }
+
+.slick-initialized .slick-slide {
+    background-color: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    height: auto;
+    margin: 30px 15px;
+}
+
+.slick-track {
+    display: flex;
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 4px;
+}
+
+.slick-dots li {
+    display: inline-block;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #ef6603;
+}
+
+.slick-dots button {
+    width: 12px;
+    height: 12px;
+    max-width: 100%;
+    border-radius: 50%;
+    color: transparent;
+    background-color: rgba(68, 68, 68, 15%);
+}
