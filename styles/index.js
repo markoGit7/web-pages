@@ -398,41 +398,21 @@ tabBtns.forEach((btn, i) => {
 /*Customers-Block Slider JS*/
 
 //init
-const mainContainer = document.querySelector('#customer-slider-container');
-const innerContainer = document.getElementById('inner-slider'),
-slide = document.querySelectorAll('#slide');
+
 
 //functions
-const createIndicators = () => {//Function for creating indicators
-    let i = 0;
-    while(i < slide.length) {
-        let indicator = document.createElement('div');
-        indicator.className = 'w-3 h-3 bg-colorText [&:not(:last-of-type)]:mr-1 rounded-full';
-        indicator.style.cssText = 'background: rgba(68, 68, 68, 0.15); cursor: pointer'
-        indicator.id = 'indicator';
-        document.getElementById('indicators').appendChild(indicator);
-        i++;
-    }
-}
+$(document).ready(function(){
+    $('#inner-slider').slick({
+    slidesToShow: 3,
+    dots:true,
+    centerMode: true,
+    });
+});
 
-const slidesMove = (i) => {//Function for making the slides move
-    let offset_Left = slide[i].offsetLeft;
-      
-    innerContainer.style.left = `-${offset_Left}px`;
 
-    console.log(innerContainer.offsetLeft);
-    
-    
-    
-}
 
 //call functions
-createIndicators();
-const allindicators = document.querySelectorAll('#indicator');
 
-allindicators.forEach((indicator, i) => {
-    indicator.addEventListener('click', ()=>{slidesMove(i)});
-});
 
 
 
