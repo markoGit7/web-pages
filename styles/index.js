@@ -192,6 +192,7 @@ const contentChange = () => {//function for changing the slides
 
 //call functions
 contentChange();
+window.addEventListener('DOMContentLoaded', () => {playing = true; autoPlay();});
 homebody.addEventListener('mouseleave', () => {playing = true; autoPlay();});
 homebody.addEventListener('mouseover', () => {playing = false; autoPlay();});
 
@@ -201,40 +202,33 @@ homebody.addEventListener('mouseover', () => {playing = false; autoPlay();});
 
 //Global Variables
 const firsMessage = document.querySelector('#onloadmessage');
-let messageon = false;
-localStorage.setItem('Notshown',messageon);
+let messageon = true;
 let shown;
 //Functions
 
 const closeMessage = () => {
-    setTimeout(() => {
+    messageon = false;
+
+    if(!messageon) {
         firsMessage.style.display = 'none';
         body.style.overflow = 'auto';
-        messageon = true;
-        shown = localStorage.setItem('shown', messageon);
-    }, 5000);
+    }
 }
 
 const shownMessage = () => {
     
-    let shown = localStorage.getItem('shown');
-    console.log(shown);
     
-    if(shown === false) {
-        window.addEventListener('DOMContentLoaded', function() {
-            firsMessage.style.display = 'flex';
-            body.style.overflow = 'hidden';
-        
-            closeMessage();
-            
-        });
-    }
+    window.addEventListener('DOMContentLoaded', function() {
+        firsMessage.style.display = 'flex';
+        body.style.overflow = 'hidden';
+    });     
+    
     
 }
 
 //Calling Functions
 shownMessage();
-
+let btnClose = document.querySelector('#close-message').addEventListener('click',closeMessage);
 
 /*Tabs-Section JS*/
 
@@ -395,12 +389,11 @@ tabBtns.forEach((btn, i) => {
     btn.addEventListener('click', () =>{changeTab(i);});
 });
 
+
+
+
 /*Customers-Block Slider JS*/
 
-//init
-
-
-//functions
 $(document).ready(function(){
     $('#my-slider').slick({
         slidesToShow: 3,
@@ -428,10 +421,6 @@ $(document).ready(function(){
 
     $('.slick-track').css('display', 'flex');//this makes the slides items-stretch
 });
-
-
-
-//call functions
 
 
 
@@ -507,18 +496,3 @@ window.onscroll = () => {
       }
     });
 };
-
-
-
-/* Testing Carousel's indicators spawn*/
-//init
-const option = {
-    totalSlides: 11, 
-    shownSlides: 3, 
-};
-
-console.log(Math.round(option.totalSlides / option.shownSlides));
-
-//functions
-
-//call functions
