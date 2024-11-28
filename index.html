@@ -26,6 +26,9 @@
         <!--jQuery Library-->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+        <!--Isotope Library-->
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
         <!--Aos-->
         <link
             href="https://unpkg.com/aos@2.3.1/dist/aos.css"
@@ -1498,6 +1501,7 @@
                     <li class="px-[3px]">
                         <button
                             class="active rounded-full p-[8px_20px_10px_20px] font-raleway text-[15px] font-medium text-colorText transition-all duration-300 ease-in-out hover:bg-colorOrange hover:text-white [&.active]:bg-colorOrange [&.active]:text-white"
+                            id="aTabBtn"
                         >
                             All
                         </button>
@@ -1506,6 +1510,8 @@
                     <li class="px-[3px]">
                         <button
                             class="rounded-full p-[8px_20px_10px_20px] font-raleway text-[15px] font-medium text-colorText transition-all duration-300 ease-in-out hover:bg-colorOrange hover:text-white [&.active]:bg-colorOrange [&.active]:text-white"
+                            id="aTabBtn"
+                            data-filter="app"
                         >
                             App
                         </button>
@@ -1514,6 +1520,8 @@
                     <li class="px-[3px]">
                         <button
                             class="rounded-full p-[8px_20px_10px_20px] font-raleway text-[15px] font-medium text-colorText transition-all duration-300 ease-in-out hover:bg-colorOrange hover:text-white [&.active]:bg-colorOrange [&.active]:text-white"
+                            data-filter="product"
+                            id="aTabBtn"
                         >
                             Card
                         </button>
@@ -1522,6 +1530,8 @@
                     <li class="px-[3px]">
                         <button
                             class="rounded-full p-[8px_20px_10px_20px] font-raleway text-[15px] font-medium text-colorText transition-all duration-300 ease-in-out hover:bg-colorOrange hover:text-white [&.active]:bg-colorOrange [&.active]:text-white"
+                            data-filter="web"
+                            id="aTabBtn"
                         >
                             Web
                         </button>
@@ -1529,164 +1539,510 @@
                 </ul>
 
                 <!--tabs here-->
-                <div id="tabs-content">
-                    <!--tab 1-->
-                    <div class="-mx-3 flex flex-row flex-wrap">
-                        <!-- image 1 -->
-                        <div class="w-1/3 px-3">
-                            <div class="group relative overflow-hidden">
-                                <picture>
-                                    <source
-                                        srcset="
-                                            images/masonry-portfolio/masonry-portfolio-1.webp
-                                        "
-                                        type="image/webp"
-                                    />
-                                    <img
-                                        src="images/masonry-portfolio/masonry-portfolio-1.jpg"
-                                        alt="port-1"
-                                        width="873"
-                                        height="885"
-                                        loading="lazy"
-                                        class="w-full"
-                                    />
-                                </picture>
-                                <!--link-->
-                                <div
-                                    class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
-                                >
-                                    <!--left-->
-                                    <div>
-                                        <h4
-                                            class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
-                                        >
-                                            App 1
-                                        </h4>
-                                        <span
-                                            class="font-text text-sm text-colorText/70"
-                                            >Lorem ipsum, dolor sit</span
-                                        >
-                                    </div>
 
-                                    <!--right-->
-                                    <div>
-                                        <a
-                                            href="#"
-                                            class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
-                                            ><i class="bi bi-zoom-in"></i
-                                        ></a>
-                                        <a
-                                            href="#"
-                                            class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
-                                            ><i class="bi bi-link-45deg"></i
-                                        ></a>
-                                    </div>
+                <div
+                    class="-mx-3 flex flex-wrap gap-y-4 transition-all duration-500 ease-in-out"
+                    id="aTabC"
+                >
+                    <!--image 1-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="app"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-1.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-1.jpg"
+                                    alt="port-1"
+                                    width="873"
+                                    height="885"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        App 1
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
+
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- image 2 -->
-                        <div class="w-1/3 px-3">
-                            <div class="group relative overflow-hidden">
-                                <picture>
-                                    <source
-                                        srcset="
-                                            images/masonry-portfolio/masonry-portfolio-2.webp
-                                        "
-                                        type="image/webp"
-                                    />
-                                    <img
-                                        src="images/masonry-portfolio/masonry-portfolio-2.jpg"
-                                        alt="port-2"
-                                        width="1302"
-                                        height="873"
-                                        loading="lazy"
-                                        class="w-full"
-                                    />
-                                </picture>
-                                <!--link-->
-                                <div
-                                    class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
-                                >
-                                    <!--left-->
-                                    <div>
-                                        <h4
-                                            class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
-                                        >
-                                            Product 1
-                                        </h4>
-                                        <span
-                                            class="font-text text-sm text-colorText/70"
-                                            >Lorem ipsum, dolor sit</span
-                                        >
-                                    </div>
+                    <!--image 2-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="product"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-2.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-2.jpg"
+                                    alt="port-2"
+                                    width="1302"
+                                    height="873"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        Product 1
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
 
-                                    <!--right-->
-                                    <div>
-                                        <a
-                                            href="#"
-                                            class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
-                                            ><i class="bi bi-zoom-in"></i
-                                        ></a>
-                                        <a
-                                            href="#"
-                                            class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
-                                            ><i class="bi bi-link-45deg"></i
-                                        ></a>
-                                    </div>
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- image 3 -->
-                        <div class="w-1/3 px-3">
-                            <div class="group relative overflow-hidden">
-                                <picture>
-                                    <source
-                                        srcset="
-                                            images/masonry-portfolio/masonry-portfolio-3.webp
-                                        "
-                                        type="image/webp"
-                                    />
-                                    <img
-                                        src="images/masonry-portfolio/masonry-portfolio-3.jpg"
-                                        alt="port-3"
-                                        width="800"
-                                        height="450"
-                                        loading="lazy"
-                                        class="w-full"
-                                    />
-                                </picture>
-                                <!--link-->
-                                <div
-                                    class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
-                                >
-                                    <!--left-->
-                                    <div>
-                                        <h4
-                                            class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
-                                        >
-                                            Branding 1
-                                        </h4>
-                                        <span
-                                            class="font-text text-sm text-colorText/70"
-                                            >Lorem ipsum, dolor sit</span
-                                        >
-                                    </div>
+                    <!--image 3-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="web"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-3.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-3.jpg"
+                                    alt="port-3"
+                                    width="800"
+                                    height="450"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        Branding 1
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
 
-                                    <!--right-->
-                                    <div>
-                                        <a
-                                            href="#"
-                                            class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
-                                            ><i class="bi bi-zoom-in"></i
-                                        ></a>
-                                        <a
-                                            href="#"
-                                            class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
-                                            ><i class="bi bi-link-45deg"></i
-                                        ></a>
-                                    </div>
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--image 4-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="web"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-6.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-6.jpg"
+                                    alt="port-6"
+                                    width="579"
+                                    height="861"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        Branding 2
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
+
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--image 5-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="product"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-5.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-5.jpg"
+                                    alt="port-5"
+                                    width="582"
+                                    height="870"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        Product 2
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
+
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--image 6-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="app"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-4.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-4.jpg"
+                                    alt="port-4"
+                                    width="800"
+                                    height="529"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        App 2
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
+
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--image 7-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="web"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-9.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-9.jpg"
+                                    alt="port-9"
+                                    width="1269"
+                                    height="843"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        Branding 3
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
+
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--image 8-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="product"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-8.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-8.jpg"
+                                    alt="port-8"
+                                    width="800"
+                                    height="533"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        Product 3
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
+
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--image 9-->
+                    <div
+                        class="w-full px-3 min-[767px]:w-1/2 min-[992px]:w-1/3"
+                        data-filter="app"
+                    >
+                        <div class="group relative h-[400px] overflow-hidden">
+                            <picture>
+                                <source
+                                    srcset="
+                                        images/masonry-portfolio/masonry-portfolio-7.webp
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/masonry-portfolio/masonry-portfolio-7.jpg"
+                                    alt="port-7"
+                                    width="1197"
+                                    height="777"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover"
+                                />
+                            </picture>
+                            <!--link-->
+                            <div
+                                class="absolute -bottom-[100px] left-0 flex w-full items-center justify-between bg-white/90 p-[15px] transition-all duration-300 ease-in-out group-hover:bottom-0"
+                            >
+                                <!--left-->
+                                <div>
+                                    <h4
+                                        class="mb-2 font-raleway text-lg font-semibold text-colorTitle"
+                                    >
+                                        App 3
+                                    </h4>
+                                    <span
+                                        class="font-text text-sm text-colorText/70"
+                                        >Lorem ipsum, dolor sit</span
+                                    >
+                                </div>
+
+                                <!--right-->
+                                <div>
+                                    <a
+                                        href="#"
+                                        class="cursor-pointer text-2xl !leading-tight text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-zoom-in"></i
+                                    ></a>
+                                    <a
+                                        href="portfolio-single"
+                                        class="hover: cursor-pointer text-[28px] text-colorText/70 transition-colors duration-300 ease-in-out hover:text-colorOrange"
+                                        ><i class="bi bi-link-45deg"></i
+                                    ></a>
                                 </div>
                             </div>
                         </div>

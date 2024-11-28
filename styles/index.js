@@ -390,6 +390,49 @@ tabBtns.forEach((btn, i) => {
 });
 
 
+//Absolute tabs section
+//init
+const aTabBtns = document.querySelectorAll('#aTabBtn').forEach((tab, indx) => {
+    const aTabBtns = document.querySelectorAll('#aTabBtn');
+
+    tab.addEventListener('click', function() {
+        for(let i = 0; i < aTabBtns.length; i++) {
+
+
+            //if clicked button is same number as i
+            if(indx === i) {
+                this.classList.add('active');
+            } else {
+                aTabBtns[i].classList.remove('active');
+            } 
+
+        }
+
+        let value = this.dataset.filter;
+        sortTabs(value);
+    });
+
+});
+
+
+
+//fucntions
+const sortTabs = (val) => {
+    console.log(val);
+
+    const aTabC = document.querySelectorAll('#aTabC > div').forEach((e) => {
+        let Cval = e.dataset.filter; 
+        
+        if(val === Cval) {
+            e.style.display = 'block';
+        } else if(val === undefined) {
+            e.style.display = 'block';
+        } else {
+            e.style.display = 'none';
+        }
+    });
+};
+//call functions
 
 
 /*Customers-Block Slider JS*/
