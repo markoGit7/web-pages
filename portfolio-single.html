@@ -17,6 +17,16 @@
         <!--Css-->
         <link href="styles/output.css" rel="stylesheet" />
 
+        <!--jQuery Library-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <!--Swiper Js-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
         <!--Bootstrap Icons Library-->
         <link
             rel="stylesheet"
@@ -285,7 +295,28 @@
         <section class="relative h-auto w-full py-[60px]">
             <div
                 class="mx-auto w-[564px] max-w-full px-3 min-[767px]:w-[744px] min-[992px]:w-[958px] min-[1192px]:w-[1344px]"
-            ></div>
+            >
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                        ...
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
         </section>
 
         <!--Footer-->
