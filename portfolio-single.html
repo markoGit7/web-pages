@@ -23,9 +23,8 @@
         <!--Swiper Js-->
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
         <!--Bootstrap Icons Library-->
         <link
@@ -292,29 +291,94 @@
         </section>
 
         <!--Single-Portfolio-Block Section-->
-        <section class="relative h-auto w-full py-[60px]">
+        <section
+            class="single-portfolio-block relative h-auto w-full py-[60px]"
+        >
             <div
-                class="mx-auto w-[564px] max-w-full px-3 min-[767px]:w-[744px] min-[992px]:w-[958px] min-[1192px]:w-[1344px]"
+                class="mx-auto w-[564px] max-w-full px-3 min-[767px]:w-[744px] min-[992px]:w-[958px] min-[1192px]:w-[1320px]"
             >
-                <!-- Slider main container -->
-                <div class="swiper">
-                    <!-- Additional required wrapper -->
+                <div
+                    class="swiper-container relative h-[972px] w-full overflow-hidden pb-[22px]"
+                >
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-                        ...
+                        <!--Slide 1-->
+                        <div class="swiper-slide">
+                            <picture>
+                                <source
+                                    srcset="images/portfolio/app-1.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/portfolio/app-1.jpg"
+                                    alt="img-1"
+                                    width="1024"
+                                    height="768"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover object-center"
+                                />
+                            </picture>
+                        </div>
+                        <!--Slide 2-->
+                        <div class="swiper-slide">
+                            <picture>
+                                <source
+                                    srcset="images/portfolio/books-1.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/portfolio/books-1.jpg"
+                                    alt="img-2"
+                                    width="1024"
+                                    height="768"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover object-center"
+                                />
+                            </picture>
+                        </div>
+                        <!--Slide 3-->
+                        <div class="swiper-slide">
+                            <picture>
+                                <source
+                                    srcset="images/portfolio/branding-1.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/portfolio/branding-1.jpg"
+                                    alt="img-3"
+                                    width="1024"
+                                    height="768"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover object-center"
+                                />
+                            </picture>
+                        </div>
+                        <!--Slide 4-->
+                        <div class="swiper-slide">
+                            <picture>
+                                <source
+                                    srcset="images/portfolio/product-1.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/portfolio/product-1.jpg"
+                                    alt="img-4"
+                                    width="1024"
+                                    height="768"
+                                    loading="lazy"
+                                    class="h-full w-full object-cover object-center"
+                                />
+                            </picture>
+                        </div>
                     </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                    <!--Navigation arrows-->
+                    <div
+                        class="swiper-button-prev !size-12 rounded-full bg-black/15 !leading-tight transition-colors duration-300 ease-in-out after:!text-2xl after:text-white/80 hover:bg-black/30"
+                    ></div>
+                    <div
+                        class="swiper-button-next !size-12 rounded-full bg-black/15 !leading-tight transition-colors duration-300 ease-in-out after:!text-2xl after:text-white/80 hover:bg-black/30"
+                    ></div>
+                    <!--Pagination-->
+                    <div class="swiper-pagination bottom-0"></div>
                 </div>
             </div>
         </section>
@@ -493,6 +557,29 @@
                 </div>
             </div>
         </div>
+
+        <!--Swiper Js-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <script>
+            var mySwiper = new Swiper(".swiper-container", {
+                // Optional parameters
+                direction: "horizontal",
+                loop: true,
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                // Navigation pagination
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            })
+        </script>
 
         <!--Main Js-->
         <script src="styles/index.js"></script>

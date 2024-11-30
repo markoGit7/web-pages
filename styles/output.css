@@ -554,40 +554,6 @@ video {
   --tw-contain-style:  ;
 }
 
-.container {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
 .invisible {
   visibility: hidden;
 }
@@ -907,6 +873,11 @@ video {
   display: none;
 }
 
+.\!size-12 {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
 .size-11 {
   width: 2.75rem;
   height: 2.75rem;
@@ -1017,6 +988,10 @@ video {
 
 .h-\[77px\] {
   height: 77px;
+}
+
+.h-\[972px\] {
+  height: 972px;
 }
 
 .h-\[calc\(100dvh-90px\)\] {
@@ -1432,6 +1407,10 @@ video {
   background-color: rgba(33,37,41,0.03);
 }
 
+.bg-black\/15 {
+  background-color: rgb(0 0 0 / 0.15);
+}
+
 .bg-black\/70 {
   background-color: rgb(0 0 0 / 0.7);
 }
@@ -1723,6 +1702,10 @@ video {
 
 .pb-\[15px\] {
   padding-bottom: 15px;
+}
+
+.pb-\[22px\] {
+  padding-bottom: 22px;
 }
 
 .pl-0 {
@@ -2164,6 +2147,12 @@ video {
   background-color: rgba(68, 68, 68, 15%);
 }
 
+.single-portfolio-block .swiper-pagination span {
+  width: 10px;
+  height: 10px;
+  background-color: #ef6603;
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -2258,6 +2247,17 @@ video {
   background-color: rgb(239 102 3 / var(--tw-bg-opacity));
 }
 
+.after\:\!text-2xl::after {
+  content: var(--tw-content);
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+}
+
+.after\:text-white\/80::after {
+  content: var(--tw-content);
+  color: rgb(255 255 255 / 0.8);
+}
+
 .after\:content-\[\'\'\]::after {
   --tw-content: '';
   content: var(--tw-content);
@@ -2280,6 +2280,10 @@ video {
 .hover\:border-colorOrange:hover {
   --tw-border-opacity: 1;
   border-color: rgb(239 102 3 / var(--tw-border-opacity));
+}
+
+.hover\:bg-black\/30:hover {
+  background-color: rgb(0 0 0 / 0.3);
 }
 
 .hover\:bg-colorOrange:hover {
@@ -2547,6 +2551,10 @@ video {
 }
 
 @media (min-width: 1192px) {
+  .min-\[1192px\]\:w-\[1320px\] {
+    width: 1320px;
+  }
+
   .min-\[1192px\]\:w-\[1344px\] {
     width: 1344px;
   }
