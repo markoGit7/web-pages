@@ -1,39 +1,80 @@
 * {
-  margin:0;
-  box-sizing: border-box;
+    margin:0;
+    box-sizing: border-box;
 }
 
-.boxed {
-  width: 1170px;
-  padding:0 20px;
-  margin: 0 auto;
+body {
+    background-image: url('./assets/images/background.jpg');
+    height: 100dvh;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header .internal{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+
+
+.form-block {
+    display: block;
+    position: relative;
+    width: 500px;
+    max-width: 100%;
 }
 
-header .internal ul{
-  padding-left: 0;
-  list-style-type: none;
-  display: flex;
-  margin: 0 -8px;
+.form-block .internal {
+    display: flex;
 }
 
-header .internal ul li{
-  padding:0 8px;
+.form-block .internal input{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    color: black;
+    outline: none;
+    border: 5px solid black;
+    font-size: 18px;
+    border-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: -2px 5px 0px 2px rgba(0,0,0,1);
+    padding:0 10px;
 }
 
-header .internal ul li a{
-  color: #000;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+
+.form-block .internal input::placeholder{
+    color: black;
 }
 
-header .internal ul li a:hover{
-  color: #09af78;
-  transition: all 0.3s ease-in-out;
+.form-block .internal input {
+    border: 5px solid #00b341!important;
+    box-shadow: -2px 5px 0px 2px #00b341!important;
 }
+
+.form-block .internal button{
+    width: 80px;
+    height: 50px;
+    max-width: 100%;
+    background-color: white;
+    color: black;
+    outline: none;
+    border: 5px solid black;
+    font-size: 18px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: -2px 5px 0px 2px rgba(0,0,0,1);
+}
+
+.focus {
+    border: 5px solid #00b341!important;
+    box-shadow: -2px 5px 0px 2px #00b341!important;
+}
+
+.form-block .internal button .fa-solid,
+.form-block .internal button .fa-square-check{
+    font-size: 30px;
+}
+
+

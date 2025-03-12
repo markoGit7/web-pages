@@ -1,9 +1,45 @@
 import React, { useState } from 'react';
 
+//Font Awesome ICONS
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+
+// Add icons to the library
+import { library } from '@fortawesome/fontawesome-svg-core';
+library.add(faCoffee, faCheckSquare);
+
+
+
+
+// window.onload = function() {
+//     input.classList.add('focus');
+//     btn.classList.add('focus');
+//     input.focus();
+// };
+
+// window.onclick = function() {
+//     input.classList.remove('focus');
+//     btn.classList.remove('focus');
+
+//     input.addEventListener('keydown', (event) => {
+//         if (event.key === 'Enter') {
+//             alert('Enter key pressed!');
+//         }
+//     })
+// };
+
+
+
 function IpToBinaryConverter() {
-    const [n, setN] = useState('155.45.32.12');
+    const [n, setN] = useState('');//document.querySelector('input').value
     const [result, setResult] = useState('');
-  
+    
+
+    if(result !== '') {
+        update();
+        setResult('');
+    }
+
     const error = (e) => {
       return e !== '' ? e : '';
     };
@@ -29,6 +65,7 @@ function IpToBinaryConverter() {
         let msg = ``,
             err;
         let cut = n.split('.');
+        
         let res = '';
   
         if (cut.length < 4) {
@@ -41,6 +78,7 @@ function IpToBinaryConverter() {
   
         for (let i = 0; i < cut.length; i++) {
             let octet = Number(cut[i]);
+            console.log(octet);
             let exist = isExisting(octet);
             let s = null,
             target = 0;
@@ -56,17 +94,16 @@ function IpToBinaryConverter() {
             for (let j = 7; j > -1; j--) {
                 s = j;
                 s = Math.pow(2, s);
-    
+                
+                console.log(exist);
+
                 if (exist) {
                     octet === s ? (res += '1') : (res += '0');
                     continue;
                 }
     
                 if (octet > s) {
-                    target += s;
-        
-                    if (target <= octet) {
-                    target += s;
+                    target += s;           
         
                     if (target <= octet) {
                         res += '1';
@@ -74,10 +111,11 @@ function IpToBinaryConverter() {
                         target = target - s;
                         res += '0';
                     }
-                    } else {
+
+                } else {
                     res += '0';
-                    }
                 }
+                
     
             }
 
@@ -87,27 +125,26 @@ function IpToBinaryConverter() {
     
         }
 
-        console.log(res);
         setResult(res);
     };
+
+    function update() {
+        let output = document.querySelector('input');
+        output.value = '';
+        output.value = result;
+    }
   
     return (
-        <div>
+        <section className='form-block'>
             <h2>IP Address to Binary Converter</h2>
-            <input
-            type="text"
-            placeholder="Enter IP address (e.g., 192.168.1.1)"
-            value={n}
-            onChange={(e) => setN(e.target.value)}
-            />
-            <button onClick={solve}>Convert</button>
-            {result && (
-            <div>
-                <h3>Binary Representation:</h3>
-                <p>{result}</p>
+            <div className='internal'>
+                <input
+                type="text"
+                onChange={(e) => setN(e.target.value)}
+                />
+                <button id='submit' onClick={solve}><FontAwesomeIcon icon="fa-solid fa-square-check" /></button>
             </div>
-            )}
-        </div>
+        </section>
     );
 }
 export default IpToBinaryConverter;
