@@ -1,0 +1,39 @@
+* {
+  margin:0;
+  box-sizing: border-box;
+}
+
+.boxed {
+  width: 1170px;
+  padding:0 20px;
+  margin: 0 auto;
+}
+
+header .internal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .internal ul{
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  margin: 0 -8px;
+}
+
+header .internal ul li{
+  padding:0 8px;
+}
+
+header .internal ul li a{
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+header .internal ul li a:hover{
+  color: #09af78;
+  transition: all 0.3s ease-in-out;
+}
