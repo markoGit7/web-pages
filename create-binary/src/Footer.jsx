@@ -2,13 +2,13 @@
 function Footer() {
 
     return (
-        <Footer>
+        <footer>
             <div className="boxed">
                 <div className="internal">
-                    <p>&copy;All rights reserved</p>
+                    <p>&copy; {new Date().getFullYear()} All rights reserved</p>
                 </div>
             </div>
-        </Footer>
+        </footer>
     );
 }
 
