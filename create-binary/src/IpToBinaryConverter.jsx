@@ -15,8 +15,8 @@ function IpToBinaryConverter() {
     const [result, setResult] = useState('');
 
 
-    function dots(value) {//Function to set dots automaticly on click of space
-        const input = document.querySelector('input');
+    function spacePress(value) {//Function to set dots automaticly on click of space
+        const input = document.querySelector('input');      
         
     };
     
@@ -48,12 +48,10 @@ function IpToBinaryConverter() {
         input.focus();
         
         configFocus(true);
-        pressEnter(input.value);
-        dots(input.value);
     };
 
 
-    function pressEnter(value) {//Function for button click shortcut on Enter
+    function enterPress(value) {
         const input = document.querySelector('input');
     
         input.onkeydown = function(event) {
@@ -68,6 +66,12 @@ function IpToBinaryConverter() {
             }
     
         }
+    };
+
+    function press(value) {//Function for button click shortcut on Enter
+
+        spacePress(value);
+        enterPress(value);
             
     };
 
@@ -182,7 +186,7 @@ function IpToBinaryConverter() {
                 type="text"
                 onFocus={() => configFocus(true)} 
                 onBlur={() => configFocus(false)}
-                onKeyUp={(e) => pressEnter(e.target.value)} 
+                onKeyUp={(e) => press(e.target.value)} 
                 onChange={(e) => setN(e.target.value)}
                 />
                 <button id='submit' onClick={solve}><FontAwesomeIcon icon="fa-solid fa-square-check" /></button>
