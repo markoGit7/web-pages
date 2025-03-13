@@ -10,29 +10,68 @@ library.add(faCoffee, faCheckSquare);
 
 
 
-
-// window.onload = function() {
-//     input.classList.add('focus');
-//     btn.classList.add('focus');
-//     input.focus();
-// };
-
-// window.onclick = function() {
-//     input.classList.remove('focus');
-//     btn.classList.remove('focus');
-
-//     input.addEventListener('keydown', (event) => {
-//         if (event.key === 'Enter') {
-//             alert('Enter key pressed!');
-//         }
-//     })
-// };
-
-
-
 function IpToBinaryConverter() {
     const [n, setN] = useState('');//document.querySelector('input').value
     const [result, setResult] = useState('');
+
+
+    function dots(value) {//Function to set dots automaticly on click of space
+        const input = document.querySelector('input');
+        
+    };
+    
+    
+    function configFocus(isFocus) {//Function for events that will happen when the input is focused
+        const input = document.querySelector('input'), btn = document.querySelector('#submit');
+    
+        if(isFocus) {
+            
+            input.classList.add('focus');
+            btn.classList.add('focus');
+    
+        } else {
+            
+            if(input.classList.contains('focus') && btn.classList.contains('focus')) {
+                input.classList.remove('focus');
+                btn.classList.remove('focus');
+            } else {
+                return;
+            }
+        }
+    }
+    
+    
+    
+    
+    window.onload = function() {
+        const input = document.querySelector('input'), btn = document.querySelector('#submit'), body = document.querySelector('body');    
+        input.focus();
+        
+        configFocus(true);
+        pressEnter(input.value);
+        dots(input.value);
+    };
+
+
+    function pressEnter(value) {//Function for button click shortcut on Enter
+        const input = document.querySelector('input');
+    
+        input.onkeydown = function(event) {
+            
+            if (event.key === 'Enter') {
+                
+                if(value !== '') {
+                    solve();
+                    configFocus(false);
+                }
+               
+            }
+    
+        }
+            
+    };
+
+
     
 
     if(result !== '') {
@@ -44,7 +83,7 @@ function IpToBinaryConverter() {
       return e !== '' ? e : '';
     };
   
-    const isExisting = (octet) => {
+    const isExisting = (octet) => {//Function for checking if the current octate exist in 2^n
       let s = null;
   
       for (let j = 7; j > -1; j--) {
@@ -61,7 +100,7 @@ function IpToBinaryConverter() {
       }
     };
   
-    const solve = () => {
+    const solve = () => {//Main Function for solving the binary alghoritam 
         let msg = ``,
             err;
         let cut = n.split('.');
@@ -128,18 +167,22 @@ function IpToBinaryConverter() {
         setResult(res);
     };
 
-    function update() {
+    function update() {//Function for displaying the output on the input field
         let output = document.querySelector('input');
         output.value = '';
         output.value = result;
-    }
+    };
+
   
     return (
         <section className='form-block'>
-            <h2>IP Address to Binary Converter</h2>
+            <h1>192  - 010</h1>
             <div className='internal'>
                 <input
                 type="text"
+                onFocus={() => configFocus(true)} 
+                onBlur={() => configFocus(false)}
+                onKeyUp={(e) => pressEnter(e.target.value)} 
                 onChange={(e) => setN(e.target.value)}
                 />
                 <button id='submit' onClick={solve}><FontAwesomeIcon icon="fa-solid fa-square-check" /></button>
