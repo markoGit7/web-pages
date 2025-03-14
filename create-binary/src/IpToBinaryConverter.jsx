@@ -14,11 +14,6 @@ function IpToBinaryConverter() {
     const [n, setN] = useState('');//document.querySelector('input').value
     const [result, setResult] = useState('');
 
-
-    function spacePress(value) {//Function to set dots automaticly on click of space
-        const input = document.querySelector('input');      
-        
-    };
     
     
     function configFocus(isFocus) {//Function for events that will happen when the input is focused
@@ -41,8 +36,6 @@ function IpToBinaryConverter() {
     }
     
     
-    
-    
     window.onload = function() {
         const input = document.querySelector('input'), btn = document.querySelector('#submit'), body = document.querySelector('body');    
         input.focus();
@@ -51,28 +44,40 @@ function IpToBinaryConverter() {
     };
 
 
-    function enterPress(value) {
-        const input = document.querySelector('input');
-    
-        input.onkeydown = function(event) {
+    function press(e) {//Function for event handeling on key press
+        let input = document.querySelector('input');
+        let value = e.target.value;
+        
+        
+        if(e.key === 'Enter' && value !== '') {
             
-            if (event.key === 'Enter') {
-                
-                if(value !== '') {
-                    solve();
-                    configFocus(false);
-                }
-               
+            solve();
+            input.blur();
+
+            configFocus(false);
+
+        } else if(e.key === ' ') {
+
+            e.preventDefault();
+
+            let s = value.split('');
+            let befElm = s[s.length - 1];
+            
+            if(befElm === '.') {
+                return;
             }
-    
+
+            if(value === '') {
+                return;
+            }
+
+            value += '.';
+
+            input.value = value;
+
         }
-    };
 
-    function press(value) {//Function for button click shortcut on Enter
-
-        spacePress(value);
-        enterPress(value);
-            
+        
     };
 
 
@@ -180,16 +185,21 @@ function IpToBinaryConverter() {
   
     return (
         <section className='form-block'>
-            <h1>192  - 010</h1>
+            <h1>192 <span><i class="fa-solid fa-rotate"></i></span> 11000000</h1>
             <div className='internal'>
                 <input
                 type="text"
                 onFocus={() => configFocus(true)} 
                 onBlur={() => configFocus(false)}
-                onKeyUp={(e) => press(e.target.value)} 
+                onKeyDown={(e) => press(e)} 
                 onChange={(e) => setN(e.target.value)}
+                placeholder='Enter IP Address (e.g., 192.168.1.1)'
                 />
                 <button id='submit' onClick={solve}><FontAwesomeIcon icon="fa-solid fa-square-check" /></button>
+            </div>
+
+            <div className='features'>
+                Features Goes Here!!!
             </div>
         </section>
     );

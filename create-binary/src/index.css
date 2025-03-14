@@ -65,6 +65,11 @@ body::before {
     text-align: center;
 }
 
+.form-block h1 span{
+    display: inline-block;
+    padding: 0 10px 0 15px;
+}
+
 .form-block .internal {
     display: flex;
     position: relative;
@@ -90,8 +95,9 @@ body::before {
 }
 
 
+
 .form-block .internal input::placeholder{
-    color: black;
+    color: rgba(0, 0, 0, .35);
 }
 
 .form-block .internal button{
@@ -118,6 +124,14 @@ body::before {
 .form-block .internal button .fa-solid,
 .form-block .internal button .fa-square-check{
     font-size: 30px;
+}
+
+.form-block .features{
+    width: 100%;
+    background-color: green;
+    min-height: 30px;
+    border-radius: 8px;
+    margin-bottom: auto;
 }
 
 
