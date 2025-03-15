@@ -62,11 +62,27 @@ function IpToBinaryConverter() {
 
             let s = value.split('');
             let befElm = s[s.length - 1];
+            let maxdot = '';
+
+            //NEW added part for giving limit to when there is 3 dots to cant add another one
+            s.forEach(elm => {
+                
+                if(elm === '.') {
+                    maxdot += '.';
+                }
+                
+            });
+
+            if(maxdot.length > 2) {
+                return;
+            }
+            
             
             if(befElm === '.') {
                 return;
             }
-
+            console.log(s);
+            
             if(value === '') {
                 return;
             }
@@ -119,7 +135,7 @@ function IpToBinaryConverter() {
         if (cut.length < 4) {
             msg = `You need 4 octets, but you have ${cut.length}`;
             err = error(msg);
-            console.log(err); // Output to console (as in the original code)
+            alert(err);
             setResult('');
             return;
         }
@@ -132,9 +148,9 @@ function IpToBinaryConverter() {
             target = 0;
     
             if (octet > 255) {
-            msg = `You can only add, up to 255. You had ${octet} `;
+            msg = `One octet can only get, up to 255. You're octet ${i+1} contains ${octet}. Adjust it to work`;
             err = error(msg);
-            console.log(err); // Output to console (as in the original code)
+            alert(err);
             setResult('');
             return;
             }
@@ -199,7 +215,12 @@ function IpToBinaryConverter() {
             </div>
 
             <div className='features'>
-                Features Goes Here!!!
+                <h2>Features: </h2>
+                <ul>
+                    <li>The purpos is to convert set of numbers(octets) into 0's and 1's</li>
+                    <li>By clicking <b>SPACE</b> you add <b>.</b></li>
+                    <li>By clicking <b>ENTER</b> you get resul</li>
+                </ul>
             </div>
         </section>
     );

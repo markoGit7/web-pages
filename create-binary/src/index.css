@@ -126,12 +126,38 @@ body::before {
     font-size: 30px;
 }
 
+.form-block .internal button.focus:hover .fa-solid,
+.form-block .internal button.focus:hover .fa-square-check{
+    color: #00b341;
+    transition: all 0.3s ease-in-out;
+}
+
+
 .form-block .features{
     width: 100%;
-    background-color: green;
+    background-color: white;
+    box-shadow: -2px 5px 0px 2px rgba(0,0,0,1);
     min-height: 30px;
     border-radius: 8px;
+    padding:20px;
     margin-bottom: auto;
+}
+
+.form-block .features h2{
+    margin-bottom: 10px;
+}
+
+.form-block .features ul{
+    font-size: 16px;
+}
+
+.form-block .features ul li{
+    margin-bottom: 8px;
+}
+
+
+.form-block .features ul li:last-of-type{
+    margin-bottom: 0px;
 }
 
 
