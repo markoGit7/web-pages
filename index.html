@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- slick slider -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        />
+
+        <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        ></script>
+
+        <!--Css-->
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="boxed">
+                <div class="box">
+                    <!-- logo -->
+                    <div class="logo">WalkOn</div>
+
+                    <!-- navigation -->
+                    <div class="nav">
+                        <ul>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+
+                            <li>
+                                <a href="#products">Products</a>
+                            </li>
+
+                            <li>
+                                <a href="#footer">Footer</a>
+                            </li>
+
+                            <li id="profile" style="display: none">
+                                <span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 448 512"
+                                    >
+                                        <path
+                                            d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"
+                                        />
+                                    </svg>
+                                </span>
+
+                                <!-- dropdown -->
+                                <div class="dropdown" style="display: none">
+                                    <span>Switch to :</span>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Delivery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="cart">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 576 512"
+                                    >
+                                        <path
+                                            d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                                        />
+                                    </svg>
+                                </span>
+
+                                <!-- cart-records -->
+                                <div class="cart_records"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- about-block -->
+        <section class="about-block" id="about">
+            <div class="boxed">
+                <div class="box">
+                    <h1>Welcome to <span>WalkOn</span></h1>
+
+                    <div class="text">
+                        <p>
+                            WalkOn makes finding your next pair of sneakers
+                            easy. Shop our curated collection of top brands and
+                            styles, all in one place.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Products-Block-->
+        <section class="product-block" id="products">
+            <div class="boxed">
+                <div class="box" id="prod-container">
+                    <!--slide 1-->
+                    <div class="single" data-label="air_forces">
+                        <div class="card">
+                            <div class="slider">
+                                <div>
+                                    <img
+                                        src="images/air-forces/air_force_white.png"
+                                        alt="Image_1"
+                                        width="592"
+                                        height="592"
+                                        data-label="all white"
+                                    />
+                                </div>
+                                <div>
+                                    <img
+                                        src="images/air-forces/air_force_black.png"
+                                        alt="Image_2"
+                                        width="1728"
+                                        height="2160"
+                                        data-label="all black"
+                                    />
+                                </div>
+                                <div>
+                                    <img
+                                        src="images/air-forces/air_force_black&white.png"
+                                        alt="Image_3"
+                                        width="1728"
+                                        height="2160"
+                                        data-label="black with white logo"
+                                    />
+                                </div>
+                            </div>
+
+                            <!--back-card-->
+                            <div class="desc">
+                                <h3 class="mb-16">Nike Air Force 1 '07</h3>
+                                <p class="mb-16">
+                                    The radiance lives on in the Nike Air Force
+                                    1 ’07, the b-ball icon that puts a fresh
+                                    spin on what you know best: crisp leather,
+                                    bold colors and the perfect amount of flash
+                                    to make you shine.
+                                </p>
+
+                                <div class="btn" id="order">
+                                    <a href="#">ORDER</a>
+                                </div>
+                            </div>
+
+                            <!--price-->
+                            <div class="price">
+                                <span>$115</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--slide 2-->
+                    <div class="single center" data-label="jordans">
+                        <div class="card">
+                            <img
+                                src="images/jordans/white-blue.png"
+                                alt="Image 1"
+                                width="1728"
+                                height="2160"
+                                data-label="Legend Blue"
+                            />
+
+                            <!--back-card-->
+                            <div class="desc">
+                                <h3 class="mb-16">
+                                    Air Jordan 11 Retro "Legend Blue"
+                                </h3>
+                                <p class="mb-16">
+                                    Walk the path of greatness in the Air Jordan
+                                    11 Retro. It has the sleek style of Michael
+                                    Jordan's original game shoe with a fit
+                                    that's been updated for comfort.
+                                </p>
+
+                                <div class="btn" id="order">
+                                    <a href="#">ORDER</a>
+                                </div>
+                            </div>
+
+                            <!--price-->
+                            <div class="price">
+                                <span>$185</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--slide 3-->
+                    <div class="single" data-label="puma">
+                        <div class="card">
+                            <div class="slider">
+                                <div>
+                                    <img
+                                        src="images/puma/white.avif"
+                                        alt="Image 1"
+                                        width="750"
+                                        height="750"
+                                        data-label="white"
+                                    />
+                                </div>
+                                <div>
+                                    <img
+                                        src="images/puma/black.avif"
+                                        alt="Image 2"
+                                        width="750"
+                                        height="750"
+                                        data-label="black"
+                                    />
+                                </div>
+                            </div>
+
+                            <!--back-card-->
+                            <div class="desc">
+                                <h3 class="mb-16">Redon Bungee</h3>
+                                <p class="mb-16">
+                                    A fresh take on the iconic Redon - the Redon
+                                    Bungee is a new and sleek upper on the
+                                    classic Redon Move silhouette.
+                                </p>
+
+                                <div class="btn" id="order">
+                                    <a href="#">ORDER</a>
+                                </div>
+                            </div>
+
+                            <!--price-->
+                            <div class="price">
+                                <span>$70.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--footer-->
+        <footer id="footer">
+            <div class="boxed">
+                <p>&copy; 2024 | Internet Programirajne</p>
+            </div>
+        </footer>
+
+        <!--Order Modal-->
+        <div class="modal" style="z-index: 777; display: none">
+            <!--close-->
+            <div class="close-x">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <path
+                        d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
+                    />
+                </svg>
+            </div>
+
+            <div class="box">
+                <!--left side-->
+                <div class="single left">
+                    <div class="image" id="add-image"></div>
+
+                    <div class="prod-info">
+                        <h3>Color: <span id="choosen_color"></span></h3>
+
+                        <h3>Total: <span id="sum"></span></h3>
+                    </div>
+                </div>
+                <!--right side-->
+                <div class="single">
+                    <div class="card">
+                        <form action="/submit" method="post" id="myForm">
+                            <h2>Make your order</h2>
+
+                            <!--name field-->
+                            <div>
+                                <label for="name">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Name..."
+                                    required
+                                />
+                            </div>
+
+                            <!--email field-->
+                            <div>
+                                <label for="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="example@example.com"
+                                    required
+                                />
+                            </div>
+
+                            <!--address field-->
+                            <div>
+                                <label for="address">Address</label>
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    placeholder="Adress..."
+                                    required
+                                />
+                            </div>
+
+                            <!--tel field-->
+                            <div>
+                                <label for="tel">Tel</label>
+                                <input
+                                    type="text"
+                                    id="tel"
+                                    name="tel"
+                                    placeholder="tel:000-000-000"
+                                    required
+                                />
+                            </div>
+
+                            <!--color field-->
+                            <div>
+                                <p>Color:</p>
+                                <select id="color"></select>
+                            </div>
+
+                            <!--size field-->
+                            <div>
+                                <p>Size:</p>
+                                <select id="size">
+                                    <option value="men">Men</option>
+                                    <option value="women">Women</option>
+                                    <option value="big_kids">Big Kids</option>
+                                    <option value="little_kids">
+                                        Little Kids
+                                    </option>
+                                    <option value="toddlers">Toddlers</option>
+                                </select>
+
+                                <!--numbers here-->
+                                <div id="size_numbs"></div>
+                            </div>
+
+                            <div class="btn form">
+                                <button type="submit">Confirm</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const form = document.getElementById("myForm");
+
+            let title = "";
+
+            let err = "";
+
+            //Part for getting the clicked button content title
+            const button = document
+                .querySelectorAll("#order")
+                .forEach((e, i) => {
+                    e.addEventListener("click", () => {
+                        let single = document.querySelectorAll(
+                            "#prod-container .single .desc h3"
+                        );
+
+                        title = single[i].innerText;
+                    });
+                });
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+
+                //Adding the Total and Color to the DB
+                const colorElement = document.getElementById("choosen_color");
+                const totalElement = document.getElementById("sum");
+                let selectNumb = document.querySelectorAll(
+                    "#size_numbs .numb_box"
+                );
+
+                const color = colorElement.textContent;
+                const total = totalElement.textContent;
+                const size = Number(
+                    selectNumb[b_indx].firstElementChild.textContent
+                );
+
+                const image = document.querySelector("#add-image > img").src;
+
+                formData.append("product", title);
+                formData.append("image", image);
+                formData.append("color", color);
+                formData.append("size", size);
+                formData.append("total", total);
+
+                for (let pair of formData.entries()) {
+                    console.log(pair[0] + ": " + pair[1]);
+                }
+
+                fetch("/submit", {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then((response) => response.text())
+                    .then((data) => {
+                        alert(data);
+                        err = data.includes("Error");
+
+                        //decrease the clicked size number by 1 from size.js
+                        if (!err) {
+                            size_Minus_One();
+                            addToCart();
+                        }
+
+                        form.reset();
+                    })
+                    .catch((error) => {
+                        console.error("Fetch Error:", error);
+                    });
+            });
+        </script>
+
+        <!--Script-->
+        <script src="js/index.js"></script>
+        <script src="server.js"></script>
+        <script src="add_to_cart.js"></script>
+        <script src="js/size.js"></script>
+    </body>
+</html>
